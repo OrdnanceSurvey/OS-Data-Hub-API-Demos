@@ -1,0 +1,81 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#logo {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: url("images/os-logo.png");
+    width: 198px;
+    height: 48px;
+}
+
+.leaflet-popup-content-wrapper {
+    background: white;
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0px 1px 0px 1px;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+      color: #0078A8;
+    padding-top: 12px;
+    
+}
+
+.leaflet-popup-content-wrapper a {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.leaflet-popup-tip-container {
+    width: 30px;
+    height: 15px;
+}
+
+.leaflet-popup-tip {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #ccc;
+    background: none;
+    box-shadow: none;
+}
+
+.container button {
+    border: 1px solid #ccc;
+    border-radius: 4px 4px 4px 4px;
+    margin: 4px;
+    width: 75px;
+}
+
+.startBtn {
+    color: black;
+    font: bolder;
+    background-color: #ccc;
+    
+}
+
+.destBtn {
+    color: black;
+    font: bolder;
+    background-color: #ccc;
+}
+
+.dropdown {
+    border: 1px solid #ccc;
+    border-radius: 4px 4px 4px 4px;
+}
