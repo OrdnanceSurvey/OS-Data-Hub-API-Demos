@@ -2,7 +2,7 @@
 
 This repo contains working examples of how to use the Ordnance Survey Maps API, a RESTful API based on the OS datasets. The API offers access to five styles of map: Leisure, Outdoor, Road, Light and Night. Scale varies from an overview of Great Britain and OS products such as [MiniScale®] (https://www.ordnancesurvey.co.uk/business-and-government/products/miniscale.html), OS VectorMap® Local and OS VectorMap® District, right down to OS MasterMap® Topography.
 
-In the outdoor stack, buildings in OS MasterMap® Topography are 2.5D. The API supports EPSG:27700 and EPSG:3857 in OGC KVP WMTS and RESTful ZXY. PNG format is supported. There are JavaScript examples using [Leaflet](http://leafletjs.com/) and [typeahead.js](https://twitter.github.io/typeahead.js/), as well as an example of making calls to the API in Python 3.0.
+In the outdoor stack, buildings in OS MasterMap® Topography are 2.5D. The API supports EPSG:27700 and EPSG:3857 in OGC KVP WMTS and RESTful ZXY. PNG format is supported. There are JavaScript examples using [Leaflet](http://leafletjs.com/) and [Openlayers 3](http://openlayers.org/), as well as [Openlayers 2.13](http://openlayers.org/two/) for OpenSpace.
 
 Register for an API key of OS Places API [here](https://www.ordnancesurvey.co.uk/forms/os-maps-api-signup).
 
