@@ -1,12 +1,12 @@
 #OS Maps API Demos
 
-This repo contains working examples of how to use the Ordnance Survey Maps API, a RESTful API based on the OS datasets. The API offers access to five styles of map: Leisure, Outdoor, Road, Light and Night. Scale varies from an overview of Great Britain and OS products such as [MiniScale®] (https://www.ordnancesurvey.co.uk/business-and-government/products/miniscale.html), OS VectorMap® Local and OS VectorMap® District, right down to OS MasterMap® Topography.
+This repo contains working examples of how to use the OS Maps API, a RESTful API based on the OS datasets. The API offers access to five styles of map: Leisure, Outdoor, Road, Light and Night. Scale varies from an overview of Great Britain and OS products such as [MiniScale®] (https://www.ordnancesurvey.co.uk/business-and-government/products/miniscale.html), OS VectorMap® Local and OS VectorMap® District, right down to OS MasterMap® Topography.
 
 In the outdoor stack, buildings in OS MasterMap® Topography are 2.5D. The API supports EPSG:27700 and EPSG:3857 in OGC KVP WMTS and RESTful ZXY. PNG format is supported. There are JavaScript examples using [Leaflet](http://leafletjs.com/) and [Openlayers 3](http://openlayers.org/), as well as [Openlayers 2.13](http://openlayers.org/two/) for OpenSpace.
 
-Register for an API key of OS Places API [here](https://www.ordnancesurvey.co.uk/forms/os-maps-api-signup).
+Register for an API key of OS Maps API [here](https://www.ordnancesurvey.co.uk/forms/os-maps-api-signup).
 
-Full documentation for the OS Places API can be found [here](https://apidocs.os.uk/docs/os-maps-overview).
+Full documentation for the OS Maps API can be found [here](https://apidocs.os.uk/docs/os-maps-overview).
 
 ##Data Sources
 
@@ -26,8 +26,6 @@ It can be used as mapping in its own right or as a contextual reference for cust
 ###OS [MasterMap](https://www.ordnancesurvey.co.uk/business-and-government/products/mastermap-products.html) Topography Layer
 
 OS MasterMap® is the most detailed, current and comprehensive map dataset of Great Britain. The Topography Layer contains landscape features, such as buildings, fields, fences, land, water and roads, as well as administrative boundaries. The Topography Layer contains over 425 million features.
-
-Our specification will extend the Infrastructure for Spatial Information in the European Community (INSPIRE) Geographical Names theme to ensure it’s compliant with European open data initiatives.
 
 ##License
 
