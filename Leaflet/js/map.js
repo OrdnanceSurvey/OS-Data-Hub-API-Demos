@@ -1,5 +1,5 @@
 var Road = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/{tilematrixSet}/{layer}/{z}/{x}/{y}.{imgFormat}?key={key}', {
-    key: 'INSERT_YOUR_API_KEY_HERE ',
+    key: OS_API_KEY,
     tilematrixSet: 'EPSG:27700',
     layer: 'Road 27700',
     imgFormat: 'png',
@@ -7,7 +7,7 @@ var Road = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/ser
 });
 
 var Outdoor = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/{tilematrixSet}/{layer}/{z}/{x}/{y}.{imgFormat}?key={key}', {
-    key: 'INSERT_YOUR_API_KEY_HERE ',
+    key: OS_API_KEY,
     tilematrixSet: 'EPSG:27700',
     layer: 'Outdoor 27700',
     imgFormat: 'png',
@@ -15,7 +15,7 @@ var Outdoor = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/
 });
 
 var Light = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/{tilematrixSet}/{layer}/{z}/{x}/{y}.{imgFormat}?key={key}', {
-    key: 'INSERT_YOUR_API_KEY_HERE ',
+    key: OS_API_KEY,
     tilematrixSet: 'EPSG:27700',
     layer: 'Light 27700',
     imgFormat: 'png',
@@ -23,7 +23,7 @@ var Light = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/se
 });
 
 var Night = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/{tilematrixSet}/{layer}/{z}/{x}/{y}.{imgFormat}?key={key}', {
-    key: 'INSERT_YOUR_API_KEY_HERE ',
+    key: OS_API_KEY,
     tilematrixSet: 'EPSG:27700',
     layer: 'Night 27700',
     imgFormat: 'png',
@@ -31,7 +31,7 @@ var Night = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/se
 });
 
 var Leisure = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/{tilematrixSet}/{layer}/{z}/{x}/{y}.{imgFormat}?key={key}', {
-    key: 'INSERT_YOUR_API_KEY_HERE ',
+    key: OS_API_KEY,
     tilematrixSet: 'EPSG:27700',
     layer: 'Leisure 27700',
     imgFormat: 'png',
