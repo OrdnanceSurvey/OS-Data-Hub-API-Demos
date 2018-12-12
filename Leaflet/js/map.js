@@ -1,49 +1,13 @@
-var Road = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/{tilematrixSet}/{layer}/{z}/{x}/{y}.{imgFormat}?key={key}', {
+var url = 'https://ordnance-omse-dev-prod.apigee.net/omse/wmts';
+var Road =  new L.TileLayer(url + '?key={key}&tilematrixSet=EPSG%3A27700&version=1.0.0&style=default&layer=Road%2027700&SERVICE=WMTS&REQUEST=GetTile&TileMatrix={z}&TileRow={y}&TileCol={x}',{
+    attribution: '&copy; <a href="http://www.ordnancesurvey.co.uk/">Ordnance Survey</a> ',
+    maxNativeZoom: 13,
+    maxZoom : 14,
     key: OS_API_KEY,
-    tilematrixSet: 'EPSG:27700',
-    layer: 'Road 27700',
-    imgFormat: 'png',
-    continuousWorld: true
-});
-
-var Outdoor = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/{tilematrixSet}/{layer}/{z}/{x}/{y}.{imgFormat}?key={key}', {
-    key: OS_API_KEY,
-    tilematrixSet: 'EPSG:27700',
-    layer: 'Outdoor 27700',
-    imgFormat: 'png',
-    continuousWorld: true
-});
-
-var Light = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/{tilematrixSet}/{layer}/{z}/{x}/{y}.{imgFormat}?key={key}', {
-    key: OS_API_KEY,
-    tilematrixSet: 'EPSG:27700',
-    layer: 'Light 27700',
-    imgFormat: 'png',
-    continuousWorld: true
-});
-
-var Night = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/{tilematrixSet}/{layer}/{z}/{x}/{y}.{imgFormat}?key={key}', {
-    key: OS_API_KEY,
-    tilematrixSet: 'EPSG:27700',
-    layer: 'Night 27700',
-    imgFormat: 'png',
-    continuousWorld: true
-});
-
-var Leisure = new L.TileLayer('https://api2.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/{tilematrixSet}/{layer}/{z}/{x}/{y}.{imgFormat}?key={key}', {
-    key: OS_API_KEY,
-    tilematrixSet: 'EPSG:27700',
-    layer: 'Leisure 27700',
-    imgFormat: 'png',
-    continuousWorld: true
 });
 
 var baseMaps = {
-    "Road": Road,
-    "Outdoor": Outdoor,
-    "Light": Light,
-    "Night": Night,
-    "Leisure": Leisure
+    "Road": Road
 };
 
 var epsg27700 = "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.999601 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.060,0.1502,0.2470,0.8421,-20.4894 +datum=OSGB36 +units=m +no_defs";
@@ -63,9 +27,6 @@ var map = L.map('map', {
     center: ([51.507222, -0.1275]),
     zoom: 4
 });
-
-L.control.layers(baseMaps).addTo(map);
-
 
 map.on('click', function(e) {
     
