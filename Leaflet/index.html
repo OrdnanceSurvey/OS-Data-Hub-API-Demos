@@ -4,16 +4,23 @@
 	<title>OS Maps API Demo</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
 	<link rel="stylesheet" href="css/map.css" />
 </head>
 <body>
+    <div>
+		<h1>OS Maps API</h1>
+		<p>This sample shows how to display a map using the OS Maps API and Leaflet</p>
+		<p id="message">To view the map, please enter a valid api key.
+	</div>
+    <form autocomplete="on" onsubmit="setupLayer(); return false;">
+		<label for="keyInput">API Key: </label>
+		<input id="keyInput" type="text"/>
+		<button type="submit">Load map</button>
+	</form>
 	<div id="map"></div>
 	<div id="logo"></div>
-	<script src="js/OS_API_KEY.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.3/proj4.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.1/proj4leaflet.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
 	<script type="text/javascript" src="js/map.js"></script>
 </body>
 </html>
