@@ -19,7 +19,7 @@ function setupLayer() {
     message.style.color = 'initial';
     message.textContent = 'To view the map, please enter a valid api key.';
 
-    var url = 'https://ordnance-omse-dev-prod.apigee.net/omse/wmts';
+    var url = 'https://osdatahubapi.os.uk/omse/wmts';
     var parameters = {
         key: key,
         tileMatrixSet: encodeURI('EPSG:3857'),
