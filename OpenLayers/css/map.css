@@ -1,8 +1,23 @@
-body,
-html,
-#map {
+body {
     margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#map {
+    flex: 1 0 auto;
+    margin: 10px;
+}
+
+#logo {
+    z-index: 400;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: url("images/os-logo.png");
+    width: 198px;
+    height: 48px;
 }
