@@ -2,7 +2,7 @@
 
 This repo contains working examples of how to use some of the products provided by the OS Data Hub.
 
-Register for an API keys OS Data Hub products [here](https://osdatahub.os.uk/).
+Register for API keys using the [OS Data Hub](https://osdatahub.os.uk/).
 
 ## Using the Demos
 
