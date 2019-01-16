@@ -5,7 +5,21 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
-        <link rel="stylesheet" href="../css/map.css" />
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                font-family: sans-serif;
+            }
+
+            #map {
+                flex: 1 0 auto;
+                margin: 10px;
+            }
+        </style>
     </head>
     <body>
         <div>
@@ -19,7 +33,6 @@
             <button type="submit">Load map</button>
         </form>
         <div id="map"></div>
-        <div id="logo"></div>
         <script type="text/javascript" src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
         <script type="text/javascript" src="js/map.js"></script>
     </body>
