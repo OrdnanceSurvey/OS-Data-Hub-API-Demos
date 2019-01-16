@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OS Maps API Demo</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript" src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" />
+        <link rel="stylesheet" href="../css/map.css" />
+    </head>
+    <body>
+        <div>
+            <h1>OS Maps API</h1>
+            <p>This sample shows how to display a map using the OS Maps API and OpenLayers</p>
+            <p id="message">To view the map, please enter a valid api key.
+        </div>
+        <form autocomplete="on" onsubmit="setupLayer(); return false;">
+            <label for="keyInput">API Key: </label>
+            <input id="keyInput" type="text"/>
+            <button type="submit">Load map</button>
+        </form>
+        <div id="map"></div>
+        <div id="logo"></div>
+		<script type="text/javascript" src="js/map.js"></script>
+    </body>
+</html>
