@@ -6,7 +6,35 @@ Register for API keys using the [OS Data Hub](https://osdatahub.os.uk/).
 
 ## Using the Demos
 
-The examples use plain HTML, CSS and JavaScript. You can run them by opening the index.html in each folder, or you can serve the examples using a web server, for example [live-server](https://www.npmjs.com/package/live-server). 
+Each of the demos needs an API key to access the OS Data Hub APIs. Sign up to the OS Data Hub, and create a project.
+Add both the OS Maps API and OS Features API to your project, and copy the API key from the project page.
+
+### OS Features API and OS Maps API examples
+
+These examples are relatively simple, and are a good place to start understanding how to intergrate the OS Data Hub APIs into a webpage.
+
+These examples use plain HTML, CSS and JavaScript. You can run them by opening the index.html in each folder, or you can serve the examples using a web server, for example [live-server](https://www.npmjs.com/package/live-server). 
+
+### Airports example
+
+The airports example is a little more complex.
+It displays a map provided by the OS Maps API, and overlays the map with features loaded from the OS Features API.
+We search for features that are airports within the current extent of the map, and draw the feature geometry on top of the map.
+Each airport is clickable, allowing you to see the additional feature properties that were returned from the WFS query.
+
+The combined example uses a small Node.JS server to serve the html and to act as a proxy for the OS Data Hub APIs.
+This proxy allows you to embed an API key into the server without exposing the API key to the end users of the application.
+To run the sample, install node and npm and then run the following commands from the `Airports` directory:
+
+<pre>
+npm install
+npm start &lt;API key&gt;
+</pre>
+
+Note: A production application would need to add extra protection to the server, to ensure that legitimate users of
+your application were the only people able to make calls through the proxy. Failure to do so could lead to malicious
+users making API requests with your API key, even though they don't have direct access to the key.
+
 
 ## License
 
