@@ -46,16 +46,7 @@ fetch(url)
         });
 
         var vectorLayer = new ol.layer.Vector({
-            source: vectorSource,
-            style: new ol.style.Style({
-                stroke: new ol.style.Stroke({
-                    color: 'rgba(212,0,88,1)',
-                    width: 2
-                }),
-                fill: new ol.style.Fill({
-                    color: 'rgba(212,0,88,0.2)'
-                })
-            })
+            source: vectorSource
         });
 
         var select = new ol.interaction.Select();
