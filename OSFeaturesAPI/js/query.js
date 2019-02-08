@@ -40,7 +40,7 @@ function runQuery() {
     var encodedParameters = Object.keys(parameters)
         .map(paramName => paramName + '=' + encodeURI(parameters[paramName]))
         .join('&');
-    var url = 'https://ordnance-omse-dev-dev.apigee.net/omse/wfs?' + encodedParameters;
+    var url = 'https://osdatahubapi.os.uk/omse/wfs?' + encodedParameters;
 
     search.disabled = true;
     more.disabled = true;
