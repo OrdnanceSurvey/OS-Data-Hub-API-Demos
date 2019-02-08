@@ -12,6 +12,7 @@ console.log('Using API key: ' + key);
 // Setup some regular expressions that we need in the rest of the code.
 const keyExpression = new RegExp('key=' + key, 'g');
 const capabilitiesExpression = /getcapabilities/i;
+const osDataHubAPIExpression = /https:\/\/osdatahubapi\.os\.uk/g;
 
 // Setup an express router. This router acts as a proxy for OS Data Hub API calls. It's main role is to add the
 // API key on to each request.
@@ -29,7 +30,7 @@ proxyRouter.get('/\*', (req, res) => {
         // reveal the API key to the client, and we need to re-route requests back through this proxy.
         request(url, (request, response, body) => {
             body = body.replace(keyExpression, '');
-            body = body.replace(/https:\/\/osdatahubapi.os.uk/g, 'http://' + req.headers.host + '/proxy');
+            body = body.replace(osDataHubAPIExpression, 'http://' + req.headers.host + '/proxy');
             res.send(body);
         });
     } else {
