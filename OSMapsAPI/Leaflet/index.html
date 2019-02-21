@@ -5,34 +5,30 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
-        <style>
-            body {
-                margin: 0;
-                height: 100vh;
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                font-family: sans-serif;
-            }
-
-            #map {
-                flex: 1 0 auto;
-                margin: 10px;
-            }
-        </style>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" />
+        <link href="../../style.css" rel="stylesheet">
     </head>
     <body>
-        <div>
-            <h1>OS Maps API</h1>
+        <div id="header">
+            <h1>OS Maps API demonstrator</h1>
             <p>This sample shows how to display a map using the OS Maps API and Leaflet</p>
-            <p id="message">To view the map, please enter a valid api key.
+            <p id="message">To view the map, please enter a valid API key.</p>
+            <form autocomplete="on" onsubmit="setupLayer(); return false;">
+                <label for="keyInput">Project API Key</label><br/>
+                <input id="keyInput" type="text" placeholder="Enter your API Project Key from the OS DataHub" /><button type="submit">Load map</button>
+            </form>
         </div>
-        <form autocomplete="on" onsubmit="setupLayer(); return false;">
-            <label for="keyInput">API Key: </label>
-            <input id="keyInput" type="text"/>
-            <button type="submit">Load map</button>
-        </form>
         <div id="map"></div>
+        <div id="instructions">
+            <p>To connect to your mapping API: </p>
+            <ol>
+                <li>Go to the <a href="https://osdatahub.os.uk" target="_osdatahub">OS DataHub</a>, </li>
+                <li>Create a project, </li>
+                <li>Add the <b>OS Maps API (WMTS)</b> API to your project</li>
+                <li>copy the project API Key, </li>
+                <li>and enter it into the box above.</li>
+            </ol>
+        </div>
         <script type="text/javascript" src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
         <script type="text/javascript" src="js/map.js"></script>
     </body>
