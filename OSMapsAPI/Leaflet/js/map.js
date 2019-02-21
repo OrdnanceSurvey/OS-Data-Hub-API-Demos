@@ -11,13 +11,17 @@ function setupLayer() {
 
     var key = document.getElementById('keyInput').value;
     var message = document.getElementById('message');
+    var instructions = document.getElementById('instructions');
+    
     if(!key) {
-        message.style.color = 'red';
-        message.textContent = 'To view the map, please enter a valid api key.';
+        message.classList.add("warning");
+        message.textContent = 'To view the map, please enter a valid API key.';
+        instructions.classList.remove("hidden");
         return;
     }
-    message.style.color = 'initial';
-    message.textContent = 'To view the map, please enter a valid api key.';
+    message.classList.remove("warning");
+    message.textContent = 'To view the map, please enter a valid API key.';
+    instructions.classList.add("hidden");
 
     var url = 'https://osdatahubapi.os.uk/omse/wmts';
     var parameters = {
@@ -43,8 +47,9 @@ function setupLayer() {
         }
     );
     layer.on('tileerror', function(event) {
-        message.style.color = 'red';
-        message.textContent = 'Got an error loading tiles! Check your network connection, or try another API key.';
+        message.classList.add("warning");
+        message.textContent = 'Could not connect to the API. Ensure you are entering a project API key for a project that contains the OS Maps API';
+        instructions.classList.remove("hidden");
     });
     map.addLayer(layer);
 }
