@@ -16,16 +16,20 @@ function runQuery() {
     var results = document.getElementById('results');
     var search = document.getElementById('search');
     var more = document.getElementById('more');
+    var instructions = document.getElementById('instructions');
+
     results.innerHTML = '';
     if(!key) {
-        message.style.color = 'red';
-        message.textContent = 'To run the query, please enter a valid api key.';
+        message.classList.add("warning");
+        message.textContent = 'To run the query, please enter a valid API key.';
+        instructions.classList.remove("hidden");
         search.disabled = false;
         more.disabled = true;
         return;
     }
-    message.style.color = 'initial';
-    message.textContent = 'To run the query, please enter a valid api key.';
+    message.classList.remove("warning");
+    message.textContent = 'To run the query, please enter a valid API key.';
+    instructions.classList.add("hidden");
 
     var parameters = {
         key: key,
@@ -62,10 +66,13 @@ function runQuery() {
                 results.appendChild(node);
 
                 // Print out the feature geometry
-                node = document.createElement('span');
-                node.innerText = 'Geometry:';
+                node = document.createElement('label');
+                node.setAttribute('for', feature.properties.OBJECTID);
+                node.innerText = 'Geometry';
                 results.appendChild(node);
                 node = document.createElement('pre');
+                node.id = feature.properties.OBJECTID;
+                node.classList.add('geometry');
                 node.innerText = JSON.stringify(feature.geometry);
                 results.appendChild(node);
 
@@ -86,7 +93,7 @@ function runQuery() {
         .catch(error => {
             search.disabled = false;
             more.disabled = true;
-            message.style.color = 'red';
+            message.classList.remove("warning");
             message.textContent = 'Got an error when running the query! Check your network connection, or try another API key.';
         });
 }
