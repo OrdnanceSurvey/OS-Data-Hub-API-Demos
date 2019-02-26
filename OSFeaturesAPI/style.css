@@ -17,7 +17,7 @@ body {
 }
 
 table, tr, th, td {
-    border: 1px solid black;
+    border: none;
     border-collapse: collapse;
 }
 
@@ -34,6 +34,27 @@ body {
     min-width: 480px;
 }
 
+table {
+    margin: 20px 0;
+}
+
+th {
+    color: #453c90;
+    background-color: white;
+    border-bottom: 2px solid #453c90;
+}
+
+tr {
+    color: #333333;
+}
+
+tr:nth-child(odd) {
+    background-color: #f6f5f9;
+}
+
+tr:last-of-type {
+    border-bottom: 1px solid #dddddd;
+}
  
 h1{
     margin:10px 0;
