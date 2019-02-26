@@ -4,40 +4,33 @@
         <title>OS Features API Demo</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body {
-                margin: 0;
-                height: 100vh;
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                font-family: sans-serif;
-            }
-
-            #results {
-                text-align: left;
-                flex: 1 0 auto;
-                margin: 10px;
-            }
-
-            table, tr, th, td {
-                border: 1px solid black;
-                border-collapse: collapse;
-            }
-        </style>
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <div>
-            <h1>OS Features API</h1>
+        <div id="header">
+            <h1>OS Features API demonstrator</h1>
             <p>This sample shows how run a simple query against the OS Features API, searching for airports</p>
-            <p id="message">To run the query, please enter a valid api key.</p>
+            <p id="message">To view the query, please enter a valid API key.</p>
+            <form autocomplete="on" onsubmit="event.preventDefault(); query();">
+                <label for="keyInput">Project API Key</label><br/>
+                <div class="inputContainer">
+                    <input id="keyInput" type="text" placeholder="Enter your API Project Key from the OS DataHub" />
+                    <button id='search' type="submit">Search</button>
+                    <button class="secondary" id='more' onclick="loadMore()" disabled>Load more</button>
+                </div>
+            </form>
         </div>
-        <form autocomplete="on" onsubmit="event.preventDefault(); query();">
-            <label for="keyInput">API Key: </label>
-            <input id="keyInput" type="text"/>
-            <button id='search' type="submit">Search</button>
-            <button id='more' onclick="loadMore()" disabled>Load more</button>
-        </form>
+        <div id="map"></div>
+        <div id="instructions">
+            <p>To connect to your mapping API: </p>
+            <ol>
+                <li>Go to the <a href="https://osdatahub.os.uk" target="_osdatahub">OS DataHub</a>, </li>
+                <li>Create a project, </li>
+                <li>Add the <b>OS Maps API (WMTS)</b> API to your project</li>
+                <li>Add the <b>OS Features API (WFS)</b> API to your project</li>
+                <li>Copy the project API Key, and enter it into the box above.</li>
+            </ol>
+        </div>
         <div id="results"></div>
 		<script type="text/javascript" src="js/query.js"></script>
     </body>
