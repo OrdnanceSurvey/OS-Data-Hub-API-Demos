@@ -68,12 +68,11 @@ function runQuery() {
                 // Print out the feature geometry
                 node = document.createElement('label');
                 node.setAttribute('for', feature.properties.OBJECTID);
-                node.innerText = 'Geometry';
+                node.innerText = 'Geometry Type: ';
                 results.appendChild(node);
-                node = document.createElement('pre');
+                node = document.createElement('span');
                 node.id = feature.properties.OBJECTID;
-                node.classList.add('geometry');
-                node.innerText = JSON.stringify(feature.geometry);
+                node.innerText = feature.geometry.type;
                 results.appendChild(node);
 
                 // Create a table with all of the feature properties

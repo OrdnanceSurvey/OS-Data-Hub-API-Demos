@@ -11,11 +11,13 @@ bng.setExtent([-238375.0,0,700000,1300000]);
 //
 var message = document.getElementById('message');
 var details = document.getElementById('details');
+var attributes = document.getElementById('attributes');
 const messageText = ' Check your network connection, or try restarting the server with another API key.';
 
 //
 // Get the WMTS capabilities doc from the server, so that we can set up the mapping layer
 //
+var select;
 var url = '/proxy/omse/wmts?request=GetCapabilities';
 fetch(url)
     .then(response => response.text(), error => {})
@@ -33,7 +35,7 @@ fetch(url)
         var tileLayer = new ol.layer.Tile({ source: tileSource });
 
         tileSource.on('tileloaderror', function(event) {
-            message.style.color = 'red';
+            message.classList.add('warning');
             message.textContent = 'Got an error loading tiles!' + messageText;
         });
 
@@ -49,7 +51,7 @@ fetch(url)
             source: vectorSource
         });
 
-        var select = new ol.interaction.Select();
+        select = new ol.interaction.Select();
         select.on('select', featureSelected);
 
         var map = new ol.Map({
@@ -70,7 +72,7 @@ fetch(url)
         map.addInteraction(select);
     })
     .catch(error => {
-        message.style.color = 'red';
+        message.classList.add('warning');
         message.textContent = 'Got an error setting up the map!' + messageText;
         console.log(error);
     });
@@ -115,8 +117,10 @@ function getURLForExtent(extent) {
 //
 function featureSelected(event) {
     if(event.selected.length === 0) {
-        details.innerText = '';
+        details.classList.add('hidden');
+        attributes.innerText = '';
     } else {
+        details.classList.remove('hidden');
         const feature = event.selected[0];
         let table = '<table><tr><th>Property</th><th>Value</th></ht></tr>';
         feature.getKeys().forEach(key => {
@@ -126,6 +130,14 @@ function featureSelected(event) {
             }
         });
         table += '</table>';
-        details.innerHTML = table;
+        attributes.innerHTML = table;
     }
+}
+
+//
+// When the user clicks close we need to clear the current selection
+//
+function closeModal() {
+    select.getFeatures().clear();
+    details.classList.add('hidden');
 }

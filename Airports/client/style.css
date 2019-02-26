@@ -1,0 +1,120 @@
+/* Set the document to use flexbox layout */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* ensure the map fills as much of the screen as possible */
+#map {
+    flex: 1 0 auto;
+}
+
+#details {
+    border-top: 6px solid #453c90;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 60px 40px 20px 40px;
+}
+
+table, tr, th, td {
+    text-align: left;
+    border-collapse: collapse;
+    border: none;
+}
+
+/* 
+NOTE:
+The CSS following this comment is for *styling purposes only* and is not essential for this demo to run
+- strip out the styles below if you want cleaner code 
+*/
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size:16px;
+    color: #666666;
+    min-width: 480px;
+}
+
+ 
+h1{
+    margin: 0 0 10px 0;
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.4;
+    letter-spacing: 0.7px;
+    color: #453c90;
+}
+
+h2{
+    margin: 0 0 10px 0;
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.4;
+    letter-spacing: 0.7px;
+}
+
+table {
+    margin: 20px 0;
+}
+
+th {
+    color: #453c90;
+    background-color: white;
+    border-bottom: 2px solid #453c90;
+}
+
+tr {
+    color: #333333;
+}
+
+tr:nth-child(odd) {
+    background-color: #f6f5f9;
+}
+
+tr:last-of-type {
+    border-bottom: 1px solid #dddddd;
+}
+
+p{
+    margin: 10px 0;
+}
+
+b{
+    font-weight:600;
+}
+
+#header{
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.4);
+    z-index:1000
+}
+
+.hidden{
+    display: none;
+}
+.warning{
+    color:#d40058;
+    font-weight:400;
+}
+.close {
+    border: none;
+    font-size: 18px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+.close:hover {
+    background-color: #f5f5f5;
+}
+
+form{
+    margin-top: 20px;
+    text-align: left;
+}
