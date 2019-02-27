@@ -1,13 +1,19 @@
 # OS Data Hub API Demos
 
-This repo contains working examples of how to use some of the products provided by the OS Data Hub.
+This repo contains working examples of how to use some of the products provided by the [OS Data Hub](https://osdatahub.os.uk/).
+The OS Data Hub is a service providing access to Ordnance Survey data as part of the [Open MasterMap Implementation Programme](https://www.ordnancesurvey.co.uk/business-and-government/products/open-mastermap.html).
 
-Register for API keys using the [OS Data Hub](https://osdatahub.os.uk/).
+*Please note that the OS Maps API provided by the OS Data Hub is separate from the [OS Maps API for Enterprise](https://developer.ordnancesurvey.co.uk/os-maps-api-enterprise).
+For help with OS Maps API for Enterprise see the separate [API docs](https://apidocs.os.uk/docs/os-maps-overview) and [demos](https://github.com/OrdnanceSurvey/OS-Maps-API).*
 
-## Using the Demos
+## Using the demos
 
-Each of the demos needs an API key to access the OS Data Hub APIs. Sign up to the OS Data Hub, and create a project.
-Add both the OS Maps API and OS Features API to your project, and copy the API key from the project page.
+Each of the demos needs an API key to access the OS Data Hub APIs.
+
+Register for API keys using the [OS Data Hub](https://osdatahub.os.uk/):
+- Sign up to the OS Data Hub, and create a project
+- Add both the OS Maps API and OS Features API to your project
+- Copy the API key from the project page
 
 ### OS Features API and OS Maps API examples
 
