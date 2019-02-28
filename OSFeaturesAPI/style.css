@@ -52,7 +52,7 @@ tr:nth-child(odd) {
     background-color: #f6f5f9;
 }
 
-tr:last-of-type {
+tr {
     border-bottom: 1px solid #dddddd;
 }
  
