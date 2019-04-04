@@ -15,8 +15,23 @@
             <p>This sample shows how to display a map using the OS Maps API and the ArcGIS API for JavaScript</p>
             <p id="message">To view the map, please enter a valid API key.</p>
             <form autocomplete="on" onsubmit="setupLayer(); return false;">
-                <label for="keyInput">Project API Key</label><br/>
-                <input id="keyInput" type="text" placeholder="Enter your API Project Key from the OS DataHub" /><button type="submit">Load map</button>
+                <label for="keyInput" class="stretch">
+                    Project API Key
+                    <input id="keyInput" type="text" placeholder="Enter your API Project Key from the OS DataHub" />
+                </label>
+                <label for="style">
+                    Mapping Style
+                    <select id="style" onchange="setupLayer()">
+                        <option value="Leisure_27700">Leisure 27700</option>
+                        <option value="Light_27700">Light 27700</option>
+                        <option value="Light_3857">Light 3857</option>
+                        <option value="Outdoor_27700">Outdoor 27700</option>
+                        <option value="Outdoor_3857">Outdoor 3857</option>
+                        <option value="Road_27700">Road 27700</option>
+                        <option value="Road_3857">Road 3857</option>
+                    </select>
+                </label>
+                <button type="submit">Load map</button>
             </form>
         </div>
         <div id="map"></div>
@@ -29,6 +44,6 @@
                 <li>Copy the project API Key, and enter it into the box above.</li>
             </ol>
         </div>
-        <script type="text/javascript" src="js/map.js"></script>
+        <script type="text/javascript" src="map.js"></script>
     </body>
 </html>
