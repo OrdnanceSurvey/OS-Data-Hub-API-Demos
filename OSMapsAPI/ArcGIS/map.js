@@ -5,32 +5,17 @@ require(
         "esri/layers/WMTSLayer",
         "esri/geometry/Point",
         "esri/geometry/SpatialReference",
+        "esri/geometry/projection",
         "dojo/domReady!"
     ],
-    function(Map, MapView, WMTSLayer, Point, SpatialReference) {
-        var map = new Map();
-
-        var view = new MapView({
-            map: map,
-            container: "map",
-            center: new Point({
-                x: 425168,
-                y: 563779,
-                spatialReference: new SpatialReference({wkid: 27700})
-            }),
-            scale: 50000,
-            constraints: {
-                minScale: 390,
-                maxScale: 1600000
-            }
-        });
+    function(Map, MapView, WMTSLayer, Point, SpatialReference, projection) {
+        var promise = projection.load();
 
         window.setupLayer = function() {
-            map.layers.removeAll();
-
             var key = document.getElementById('keyInput').value;
             var message = document.getElementById('message');
             var instructions = document.getElementById('instructions');
+            var style = document.getElementById('style').value;
 
             if(!key) {
                 message.classList.add("warning");
@@ -44,6 +29,9 @@ require(
 
             var wmtsLayer = new WMTSLayer({
                 url: 'https://osdatahubapi.os.uk/omse/wmts',
+                activeLayer: {
+                    id: style
+                },
                 customParameters: {
                     key: key
                 },
@@ -56,7 +44,26 @@ require(
                 instructions.classList.remove("hidden");
             });
 
-            map.layers.add(wmtsLayer);
+            var map = new Map({
+                layers: [wmtsLayer]
+            });
+
+            promise.then(() => {
+                var center = new Point({
+                    x: 425168,
+                    y: 563779,
+                    spatialReference: new SpatialReference({wkid: 27700})
+                });
+                if(style.indexOf('27700') === -1) {
+                    center = projection.project(center, new SpatialReference({ wkid: 3857 }));
+                }
+                new MapView({
+                    map: map,
+                    container: "map",
+                    center: center,
+                    scale: 50000
+                });
+            });
         };
     }
 );
