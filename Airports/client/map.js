@@ -25,7 +25,7 @@ fetch(url)
         var parser = new ol.format.WMTSCapabilities();
         var result = parser.read(text);
         var options = ol.source.WMTS.optionsFromCapabilities(result, {
-            layer: 'Road_27700'
+            layer: 'Light_27700'
         });
 
         var tileSource = new ol.source.WMTS({
