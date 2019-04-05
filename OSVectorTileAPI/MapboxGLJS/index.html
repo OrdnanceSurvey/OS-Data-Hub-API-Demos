@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OS Vector Tile API Demo</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet'/>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" />
+        <link href="../style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div id="header">
+            <h1>OS Vector Tile API demonstrator</h1>
+            <p>This sample shows how to display a map using the OS Vector Tile API and MapBox GL JS</p>
+            <p id="message">To view the map, please enter a valid API key.</p>
+            <form autocomplete="on" onsubmit="setupLayer(); return false;">
+                <label for="keyInput">Project API Key</label><br/>
+                <input id="keyInput" type="text" placeholder="Enter your API Project Key from the OS DataHub" /><button type="submit">Load map</button>
+            </form>
+        </div>
+        <div id="map"></div>
+        <div id="instructions">
+            <p>To connect to your mapping API: </p>
+            <ol>
+                <li>Go to the <a href="https://osdatahub.os.uk" target="_blank" rel="noopener noreferrer">OS DataHub</a>, </li>
+                <li>Create a project, </li>
+                <li>Add the <b>OS Vector Tile API (VTS)</b> API to your project</li>
+                <li>Copy the project API Key, and enter it into the box above.</li>
+            </ol>
+        </div>
+        <script type="text/javascript" src="map.js"></script>
+    </body>
+</html>

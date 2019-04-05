@@ -15,7 +15,7 @@ Register for API keys using the [OS Data Hub](https://osdatahub.os.uk/):
 - Add both the OS Maps API and OS Features API to your project
 - Copy the API key from the project page
 
-### OS Features API and OS Maps API examples
+### OS Features API, OS Maps API and OS Vector Tile API examples
 
 These examples are relatively simple, and are a good place to start understanding how to integrate the OS Data Hub APIs into a web application.
 
