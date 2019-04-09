@@ -37,6 +37,9 @@ function setupLayer() {
     map.addControl(new mapboxgl.AttributionControl({
         customAttribution: '&copy; <a href="http://www.ordnancesurvey.co.uk/">Ordnance Survey</a>'
     }));
+    
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
 
     map.on('error', error => {
         console.log(error);
