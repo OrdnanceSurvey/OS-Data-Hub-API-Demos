@@ -54,15 +54,16 @@ function setupLayer() {
 
             var viewOptions = {
                 projection: options.projection,
-                center: [-121099, 7161610],
+                center: [51.507222, -0.1275],
                 resolutions: options.tileGrid.getResolutions(),
-                zoom: 5
+                zoom: 10
             }
 
             if(options.projection === bng) {
                 var point = new ol.geom.Point(viewOptions.center);
                 point.transform('EPSG:3857', bng);
                 viewOptions.center = point.getCoordinates();
+                viewOptions.zoom = 5;
             }
 
             map = new ol.Map({
