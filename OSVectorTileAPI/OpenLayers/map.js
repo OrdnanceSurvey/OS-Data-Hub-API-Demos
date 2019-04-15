@@ -62,9 +62,12 @@ function setupLayer() {
             var source = new ol.source.VectorTile(options);
             var layer = new ol.layer.VectorTile({ source: source });
 
-            // ol-mapbox-style doesn't like the 0 opacity for the road names style, so we replace it here
-            var roadNames = style.layers.find(s => s.id === 'OS Open Zoomstack - Road/names');
-            roadNames.paint['icon-color'] = roadNames.paint['icon-color'].replace(',0)', ',1)')
+            // ol-mapbox-style doesn't like the 0 opacity for the icon colours, so we replace them here
+            style.layers.forEach(layer => {
+                if(layer.paint && layer.paint['icon-color']) {
+                    layer.paint['icon-color'] = layer.paint['icon-color'].replace(',0)', ',1)');
+                }
+            });
 
             var styleFn = olms.stylefunction(layer, style, 'esri', resolutions, sprite, spriteImageUrl);
 
