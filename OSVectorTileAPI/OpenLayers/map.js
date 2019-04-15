@@ -42,7 +42,7 @@ function setupLayer() {
             // Read the tile grid dimensions from the service meta-data
             var extent = [service.fullExtent.xmin, service.fullExtent.ymin, service.fullExtent.xmax, service.fullExtent.ymax];
             var origin = [service.tileInfo.origin.x, service.tileInfo.origin.y];
-            var resolutions = service.tileInfo.lods.map(l => l.resolution);
+            var resolutions = service.tileInfo.lods.map(l => l.resolution).slice(0, 16);
             var tileSize = service.tileInfo.rows;
             var tiles = service.tiles[0];
             var wkid = service.tileInfo.spatialReference.latestWkid;
