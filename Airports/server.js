@@ -11,7 +11,6 @@ console.log('Using API key: ' + key);
 
 // Setup some regular expressions that we need in the rest of the code.
 const keyExpression = new RegExp('key=' + key, 'g');
-const capabilitiesExpression = /getcapabilities/i;
 const osDataHubAPIExpression = /https:\/\/osdatahubapi\.os\.uk/g;
 
 // Setup an express router. This router acts as a proxy for OS Data Hub API calls. It's main role is to add the
@@ -25,18 +24,22 @@ proxyRouter.get('/\*', (req, res) => {
     }
     const url = 'https://osdatahubapi.os.uk' + req.url + separator + 'key=' + key;
 
-    if(capabilitiesExpression.test(url)) {
-        // We need to intercept and re-write GetCapabilities requests, as we don't want the capabilities document to
-        // reveal the API key to the client, and we need to re-route requests back through this proxy.
-        request(url, (request, response, body) => {
+    // We need to intercept and re-write all the requests, as we don't want the WMTS capabilities document
+    // or WFS replies to reveal the API key to the client, and we need to re-route requests back through this proxy.
+    request({ url, encoding: null }, (error, response, buffer) => {
+        const contentType = response.headers['content-type'];
+        if(contentType) {
+            res.set('Content-Type', contentType);
+        }
+        if(contentType !== 'image/png') {
+            let body = buffer.toString();
             body = body.replace(keyExpression, '');
             body = body.replace(osDataHubAPIExpression, 'http://' + req.headers.host + '/proxy');
             res.send(body);
-        });
-    } else {
-        // Get the data from the OS Data Hub, and then send the result back to the client.
-        request.get(url).pipe(res);
-    }
+        } else {
+            res.send(buffer);
+        }
+    });
 });
 
 // Setup an express server.
