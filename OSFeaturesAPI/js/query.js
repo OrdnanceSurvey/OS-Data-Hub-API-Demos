@@ -35,7 +35,8 @@ function runQuery() {
         key: key,
         request: 'GetFeature',
         service: 'WFS',
-        typeName: 'FunctionalSite',
+        version: '2.0.0',
+        typeName: 'Sites_FunctionalSite',
         filter: '<Filter><PropertyIsEqualTo><PropertyName>SiteFunction</PropertyName><Literal>Airport</Literal></PropertyIsEqualTo></Filter>',
         startIndex: startIndex,
         count: count,
@@ -44,7 +45,7 @@ function runQuery() {
     var encodedParameters = Object.keys(parameters)
         .map(paramName => paramName + '=' + encodeURI(parameters[paramName]))
         .join('&');
-    var url = 'https://osdatahubapi.os.uk/omse/wfs?' + encodedParameters;
+    var url = 'https://osdatahubapi.os.uk/OSFeaturesAPI/wfs/v1?' + encodedParameters;
 
     search.disabled = true;
     more.disabled = true;

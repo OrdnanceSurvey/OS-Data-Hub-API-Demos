@@ -27,7 +27,7 @@ function setupLayer() {
     message.textContent = 'To view the map, please enter a valid API key.';
     instructions.classList.add("hidden");
 
-    var url = 'https://osdatahubapi.os.uk/omse/wmts?request=GetCapabilities&key=' + key;
+    var url = 'https://osdatahubapi.os.uk/OSMapsAPI/wmts/v1?service=wmts&request=GetCapabilities&key=' + key;
     fetch(url)
         .then(response => response.text())
         .then(text => {

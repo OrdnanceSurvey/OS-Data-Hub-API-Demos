@@ -20,7 +20,7 @@ function setupLayer() {
     message.textContent = 'To view the map, please enter a valid API key.';
     instructions.classList.add("hidden");
 
-    var serviceUrl = "https://osdatahubapi.os.uk/omse/vts";
+    var serviceUrl = "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1";
     map = new mapboxgl.Map({
         container: 'map',
         style: serviceUrl + '/resources/styles',

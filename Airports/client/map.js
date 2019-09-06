@@ -18,7 +18,7 @@ const messageText = ' Check your network connection, or try restarting the serve
 // Get the WMTS capabilities doc from the server, so that we can set up the mapping layer
 //
 var select;
-var url = '/proxy/omse/wmts?request=GetCapabilities';
+var url = '/proxy/OSMapsAPI/wmts/v1?request=GetCapabilities&service=WMTS';
 fetch(url)
     .then(response => response.text(), error => {})
     .then(text => {
@@ -84,8 +84,9 @@ fetch(url)
 function getURLForExtent(extent) {
     const wfsParameters = {
         service: 'WFS',
+        version: '2.0.0',
         request: 'GetFeature',
-        typeNames: 'FunctionalSite',
+        typeNames: 'Sites_FunctionalSite',
         outputFormat: 'GEOJSON',
         srsName: 'urn:ogc:def:crs:EPSG::27700',
         filter:
@@ -109,7 +110,7 @@ function getURLForExtent(extent) {
         .map(param => param + '=' + encodeURI(wfsParameters[param]))
         .join('&');
 
-    return '/proxy/omse/wfs?' + urlParameters;
+    return '/proxy/OSFeaturesAPI/wfs/v1?' + urlParameters;
 }
 
 //
