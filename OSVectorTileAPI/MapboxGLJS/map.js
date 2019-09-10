@@ -26,6 +26,7 @@ function setupLayer() {
         style: serviceUrl + '/resources/styles',
         center: [-1.608411, 54.968004],
         zoom: 9,
+        maxZoom: 15,
         transformRequest: url => {
             url += '?key=' + key + '&srs=3857';
             return {
