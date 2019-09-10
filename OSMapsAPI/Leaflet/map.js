@@ -46,7 +46,7 @@ function setupLayer() {
         mapOptions.zoom = 4;
     }
 
-    var url = 'https://osdatahubapi.os.uk/omse/wmts';
+    var url = 'https://osdatahubapi.os.uk/OSMapsAPI/wmts/v1';
     var parameters = {
         key: key,
         tileMatrixSet: encodeURI(tileMatrix),

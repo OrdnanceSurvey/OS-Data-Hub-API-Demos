@@ -28,7 +28,7 @@ require(
             instructions.classList.add("hidden");
 
             var wmtsLayer = new WMTSLayer({
-                url: 'https://osdatahubapi.os.uk/omse/wmts',
+                url: 'https://osdatahubapi.os.uk/OSMapsAPI/wmts/v1',
                 activeLayer: {
                     id: style
                 },

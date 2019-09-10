@@ -7,7 +7,7 @@ var bng = ol.proj.get('EPSG:27700');
 bng.setExtent([-238375.0,0,700000,1300000]);
 
 var map;
-var serviceUrl = "https://osdatahubapi.os.uk/omse/vts";
+var serviceUrl = "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1";
 
 function setupLayer() {
     if(map) {

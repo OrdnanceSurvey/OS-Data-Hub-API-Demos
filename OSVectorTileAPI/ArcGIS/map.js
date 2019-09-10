@@ -10,7 +10,7 @@ require(
     ],
     function(Map, MapView, VectorTileLayer, Point, SpatialReference, esriConfig) {
 
-        var vectorLayerUrl = "https://osdatahubapi.os.uk/omse/vts";
+        var vectorLayerUrl = "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1";
         var key;
 
         esriConfig.request.interceptors.push({
