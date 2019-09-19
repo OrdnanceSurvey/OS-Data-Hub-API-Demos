@@ -27,10 +27,17 @@ proxyRouter.get('/\*', (req, res) => {
     // We need to intercept and re-write all the requests, as we don't want the WMTS capabilities document
     // or WFS replies to reveal the API key to the client, and we need to re-route requests back through this proxy.
     request({ url, encoding: null }, (error, response, buffer) => {
+        if(!response) {
+            res.status(502).send('Failed to proxy URL: ' + req.url);
+            return;
+        }
+
         const contentType = response.headers['content-type'];
+        const statusCode = response.statusCode;
         if(contentType) {
             res.set('Content-Type', contentType);
         }
+        res.status(statusCode);
         if(contentType !== 'image/png') {
             let body = buffer.toString();
             body = body.replace(keyExpression, '');
