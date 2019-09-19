@@ -28,7 +28,7 @@ proxyRouter.get('/\*', (req, res) => {
     // or WFS replies to reveal the API key to the client, and we need to re-route requests back through this proxy.
     request({ url, encoding: null }, (error, response, buffer) => {
         if(!response) {
-            res.status(502, 'Failed to proxy URL: ' + req.url);
+            res.status(502).send('Failed to proxy URL: ' + req.url);
             return;
         }
 
