@@ -1,0 +1,1707 @@
+var custom_style = {
+  "version": 8,
+  "sprite": "https://osdatahubapi.os.uk/omse/vts/resources/sprites/sprite",
+  "glyphs": "https://osdatahubapi.os.uk/omse/vts/resources/fonts/{fontstack}/{range}.pbf",
+  "sources": {
+    "esri": {
+      "type": "vector",
+      "url": "https://osdatahubapi.os.uk/omse/vts/"
+    }
+  },
+  "layers": [
+    {
+      "id": "OS Open Zoomstack - Road/land",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "land",
+      "layout": {},
+      "paint": {
+        "fill-color": "#F9F9F9",
+        "fill-outline-color": "#F9F9F9"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/national_parks",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "national_parks",
+      "maxzoom": 11.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#ECECEC",
+        "fill-opacity": 0.5
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/urban_areas (National)",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "urban_areas (National)",
+      "maxzoom": 7.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#DFDFDF",
+        "fill-opacity": 0.5
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/urban_areas (Regional)",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "urban_areas (Regional)",
+      "minzoom": 7.85,
+      "maxzoom": 10.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#DFDFDF",
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/sites/Air Transport",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "sites",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 9.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#E3E3E3",
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/sites/Education",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "sites",
+      "filter": [
+        "==",
+        "_symbol",
+        1
+      ],
+      "minzoom": 9.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#E3E3E3",
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/sites/Medical Care",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "sites",
+      "filter": [
+        "==",
+        "_symbol",
+        2
+      ],
+      "minzoom": 9.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#E5E5E5",
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/sites/Road Transport",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "sites",
+      "filter": [
+        "==",
+        "_symbol",
+        3
+      ],
+      "minzoom": 9.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#F3F3F3",
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/sites/Water Transport",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "sites",
+      "filter": [
+        "==",
+        "_symbol",
+        4
+      ],
+      "minzoom": 9.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#E2E2E2",
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/greenspace",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "greenspace",
+      "minzoom": 9.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#F0F0F0",
+        "fill-outline-color": "#E9E9E9"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/woodland (National)",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "woodland (National)",
+      "minzoom": 6.21,
+      "maxzoom": 8.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#E3E3E3"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/woodland (Regional)",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "woodland (Regional)",
+      "minzoom": 8.85,
+      "maxzoom": 10.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#E3E3E3"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/woodland (Local)",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "woodland (Local)",
+      "minzoom": 10.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#E3E3E3"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/contours (Normal)",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "contours (Normal)",
+      "minzoom": 10.26,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#A6A6A6",
+        "line-width": 0.533333,
+        "line-opacity": 0.25
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/contours (Index)",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "contours (Index)",
+      "minzoom": 8.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#A6A6A6",
+        "line-width": 1.33333,
+        "line-opacity": 0.45
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/district_buildings",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "district_buildings",
+      "minzoom": 10.85,
+      "maxzoom": 12.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#DFDFDF"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/local_buildings",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "local_buildings",
+      "minzoom": 12.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#DFDFDF",
+        "fill-outline-color": "#D2D2D2"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/surfacewater (National)",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "surfacewater (National)",
+      "minzoom": 5.21,
+      "maxzoom": 7.21,
+      "layout": {},
+      "paint": {
+        "fill-color": "#E8E8E8"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/surfacewater (Regional)",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "surfacewater (Regional)",
+      "minzoom": 7.21,
+      "maxzoom": 11.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#E8E8E8"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/surfacewater (Local)",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "surfacewater (Local)",
+      "minzoom": 11.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#E8E8E8",
+        "fill-outline-color": "#CCCCCC"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/foreshore",
+      "type": "fill",
+      "source": "esri",
+      "source-layer": "foreshore",
+      "minzoom": 8.85,
+      "layout": {},
+      "paint": {
+        "fill-color": "#F2F2F2"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/waterlines (National)",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "waterlines (National)",
+      "minzoom": 7.21,
+      "maxzoom": 7.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#CCCCCC",
+        "line-width": 1.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/waterlines (Regional)",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "waterlines (Regional)",
+      "minzoom": 7.85,
+      "maxzoom": 9.53,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#CCCCCC",
+        "line-width": 1.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/waterlines (District)",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "waterlines (District)",
+      "minzoom": 9.53,
+      "maxzoom": 11.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#CCCCCC",
+        "line-width": 1.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/waterlines (Local)/Local",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "waterlines (Local)",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 11.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#CCCCCC",
+        "line-width": 1.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/waterlines (Local)/MHW",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "waterlines (Local)",
+      "filter": [
+        "==",
+        "_symbol",
+        1
+      ],
+      "minzoom": 11.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#CCCCCC",
+        "line-width": 1.6
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/waterlines (Local)/MLW",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "waterlines (Local)",
+      "filter": [
+        "==",
+        "_symbol",
+        2
+      ],
+      "minzoom": 11.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#CCCCCC",
+        "line-width": 0.8
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Local Roads)/Local, 0/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Local Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 11.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 5.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Local Roads)/Local, 0/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Local Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 11.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#FFFFFF",
+        "line-width": 3.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Local Roads)/Local, 1/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Local Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        1
+      ],
+      "minzoom": 11.85,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 5.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Local Roads)/Local, 1/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Local Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        1
+      ],
+      "minzoom": 11.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#FFFFFF",
+        "line-width": 3.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Local Roads)/Restricted, 0/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Local Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        2
+      ],
+      "minzoom": 11.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 4
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Local Roads)/Restricted, 0/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Local Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        2
+      ],
+      "minzoom": 11.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#E2E2E2",
+        "line-width": 2
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Local Roads)/Restricted, 1/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Local Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        3
+      ],
+      "minzoom": 11.85,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 4
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Local Roads)/Restricted, 1/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Local Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        3
+      ],
+      "minzoom": 11.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#E2E2E2",
+        "line-width": 2
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Local Roads)/Restricted, 2/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Local Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        4
+      ],
+      "minzoom": 11.85,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 4
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Local Roads)/Restricted, 2/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Local Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        4
+      ],
+      "minzoom": 11.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#E2E2E2",
+        "line-width": 2
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Minor Roads)/Guided Busway, 0/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Minor Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 10.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#E1E1E1",
+        "line-width": 4
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Minor Roads)/Guided Busway, 0/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Minor Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 10.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#B2B2B2",
+        "line-width": 0.533333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Minor Roads)/Guided Busway, 1/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Minor Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        1
+      ],
+      "minzoom": 10.85,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#E1E1E1",
+        "line-width": 4
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Minor Roads)/Guided Busway, 1/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Minor Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        1
+      ],
+      "minzoom": 10.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#B2B2B2",
+        "line-width": 0.533333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Minor Roads)/Minor, 0/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Minor Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        2
+      ],
+      "minzoom": 10.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 6
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Minor Roads)/Minor, 0/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Minor Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        2
+      ],
+      "minzoom": 10.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#EFEFEF",
+        "line-width": 4
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Minor Roads)/Minor, 1/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Minor Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        3
+      ],
+      "minzoom": 10.85,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 6
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Minor Roads)/Minor, 1/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_local (Minor Roads)",
+      "filter": [
+        "==",
+        "_symbol",
+        3
+      ],
+      "minzoom": 10.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#EFEFEF",
+        "line-width": 4
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_regional/A Road, 0/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_regional",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 7.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 5.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_regional/A Road, 0/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_regional",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 7.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#AEAEAE",
+        "line-width": 3.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_regional/A Road, 1/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_regional",
+      "filter": [
+        "==",
+        "_symbol",
+        1
+      ],
+      "minzoom": 7.21,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 5.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_regional/A Road, 1/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_regional",
+      "filter": [
+        "==",
+        "_symbol",
+        1
+      ],
+      "minzoom": 7.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#AEAEAE",
+        "line-width": 3.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_regional/B Road, 0/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_regional",
+      "filter": [
+        "==",
+        "_symbol",
+        2
+      ],
+      "minzoom": 7.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 5.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_regional/B Road, 0/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_regional",
+      "filter": [
+        "==",
+        "_symbol",
+        2
+      ],
+      "minzoom": 7.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#CACACA",
+        "line-width": 3.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_regional/B Road, 1/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_regional",
+      "filter": [
+        "==",
+        "_symbol",
+        3
+      ],
+      "minzoom": 7.21,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 5.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_regional/B Road, 1/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_regional",
+      "filter": [
+        "==",
+        "_symbol",
+        3
+      ],
+      "minzoom": 7.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#CACACA",
+        "line-width": 3.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_regional/Tunnels, <Null>",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_regional",
+      "filter": [
+        "==",
+        "_symbol",
+        4
+      ],
+      "minzoom": 7.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#464646",
+        "line-dasharray": [
+          0.001,
+          1.999
+        ],
+        "line-width": 1.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_national/Motorway, 0/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_national",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 5.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 6
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_national/Motorway, 0/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_national",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 5.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#808080",
+        "line-width": 4
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_national/Motorway, 1/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_national",
+      "filter": [
+        "==",
+        "_symbol",
+        1
+      ],
+      "minzoom": 5.21,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 6
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_national/Motorway, 1/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_national",
+      "filter": [
+        "==",
+        "_symbol",
+        1
+      ],
+      "minzoom": 5.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#808080",
+        "line-width": 4
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_national/Motorway, 2/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_national",
+      "filter": [
+        "==",
+        "_symbol",
+        2
+      ],
+      "minzoom": 5.21,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 6
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_national/Motorway, 2/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_national",
+      "filter": [
+        "==",
+        "_symbol",
+        2
+      ],
+      "minzoom": 5.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#808080",
+        "line-width": 4
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_national/Primary, 0/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_national",
+      "filter": [
+        "==",
+        "_symbol",
+        3
+      ],
+      "minzoom": 5.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 5.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_national/Primary, 0/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_national",
+      "filter": [
+        "==",
+        "_symbol",
+        3
+      ],
+      "minzoom": 5.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8D8D8D",
+        "line-width": 3.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_national/Primary, 1/1",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_national",
+      "filter": [
+        "==",
+        "_symbol",
+        4
+      ],
+      "minzoom": 5.21,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 5.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_national/Primary, 1/0",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "roads_national",
+      "filter": [
+        "==",
+        "_symbol",
+        4
+      ],
+      "minzoom": 5.21,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8D8D8D",
+        "line-width": 3.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/rail/Multi Track",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "rail",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 10.53,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#646464",
+        "line-width": 1.6
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/rail/Narrow Gauge",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "rail",
+      "filter": [
+        "==",
+        "_symbol",
+        1
+      ],
+      "minzoom": 10.53,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#646464",
+        "line-width": 0.466667
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/rail/Single Track",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "rail",
+      "filter": [
+        "==",
+        "_symbol",
+        2
+      ],
+      "minzoom": 10.53,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#646464",
+        "line-width": 0.933333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/rail/Tunnel",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "rail",
+      "filter": [
+        "==",
+        "_symbol",
+        3
+      ],
+      "minzoom": 10.53,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#646464",
+        "line-dasharray": [
+          0.001,
+          1.999
+        ],
+        "line-width": 1.33333
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/boundaries",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "boundaries",
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#8F8F8F",
+        "line-width": 1.6
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/etl",
+      "type": "line",
+      "source": "esri",
+      "source-layer": "etl",
+      "minzoom": 11.85,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#888888",
+        "line-dasharray": [
+          3,
+          2
+        ],
+        "line-width": 1.33333,
+        "line-opacity": 0.6
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/railway_stations/Light Rapid Transit Station",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "railway_stations",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 10.53,
+      "layout": {
+        "icon-image": "OS Open Zoomstack - Road/railway_stations/Light Rapid Transit Station",
+        "icon-allow-overlap": true
+      },
+      "paint": {
+        "icon-color": "rgba(50,50,50,0)"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/railway_stations/Light Rapid Transit Station And London Underground Station",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "railway_stations",
+      "filter": [
+        "==",
+        "_symbol",
+        1
+      ],
+      "minzoom": 10.53,
+      "layout": {
+        "icon-image": "OS Open Zoomstack - Road/railway_stations/Light Rapid Transit Station And London Underground Station",
+        "icon-allow-overlap": true
+      },
+      "paint": {
+        "icon-color": "rgba(50,50,50,0)"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/railway_stations/Light Rapid Transit Station And Railway Station",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "railway_stations",
+      "filter": [
+        "==",
+        "_symbol",
+        2
+      ],
+      "minzoom": 10.53,
+      "layout": {
+        "icon-image": "OS Open Zoomstack - Road/railway_stations/Light Rapid Transit Station And Railway Station",
+        "icon-allow-overlap": true
+      },
+      "paint": {
+        "icon-color": "rgba(50,50,50,0)"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/railway_stations/London Underground Station",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "railway_stations",
+      "filter": [
+        "==",
+        "_symbol",
+        3
+      ],
+      "minzoom": 10.53,
+      "layout": {
+        "icon-image": "OS Open Zoomstack - Road/railway_stations/London Underground Station",
+        "icon-allow-overlap": true
+      },
+      "paint": {
+        "icon-color": "rgba(50,50,50,0)"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/railway_stations/Railway Station",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "railway_stations",
+      "filter": [
+        "==",
+        "_symbol",
+        4
+      ],
+      "minzoom": 10.53,
+      "layout": {
+        "icon-image": "OS Open Zoomstack - Road/railway_stations/Railway Station",
+        "icon-allow-overlap": true
+      },
+      "paint": {
+        "icon-color": "rgba(50,50,50,0)"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/railway_stations/Railway Station And London Underground Station",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "railway_stations",
+      "filter": [
+        "==",
+        "_symbol",
+        5
+      ],
+      "minzoom": 10.53,
+      "layout": {
+        "icon-image": "OS Open Zoomstack - Road/railway_stations/Railway Station And London Underground Station",
+        "icon-allow-overlap": true
+      },
+      "paint": {
+        "icon-color": "rgba(50,50,50,0)"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/towns & villages",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "towns & villages",
+      "minzoom": 6.53,
+      "layout": {
+        "icon-image": "OS Open Zoomstack - Road/towns & villages",
+        "icon-allow-overlap": true
+      },
+      "paint": {
+        "icon-color": "rgba(240,240,240,0)"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/country & capital",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "country & capital",
+      "minzoom": 6.53,
+      "layout": {
+        "icon-image": "OS Open Zoomstack - Road/country & capital",
+        "icon-allow-overlap": true
+      },
+      "paint": {
+        "icon-color": "rgba(240,240,240,0)"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/airports",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "airports",
+      "minzoom": 9.85,
+      "layout": {
+        "icon-image": "OS Open Zoomstack - Road/airports",
+        "icon-rotate": 135,
+        "icon-allow-overlap": true,
+        "text-font": [
+          "Arial Regular"
+        ],
+        "text-size": 11.3333,
+        "text-anchor": "left",
+        "text-offset": [
+          0.819323,
+          0
+        ],
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "#4E4E4E",
+        "text-color": "#5C5C5C",
+        "text-halo-color": "#F3F3F3",
+        "text-halo-width": 1.51181
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/rail/label/Default",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "rail/label",
+      "minzoom": 14.85,
+      "layout": {
+        "symbol-placement": "line",
+        "symbol-spacing": 1000,
+        "text-font": [
+          "Arial Regular"
+        ],
+        "text-size": 10.6667,
+        "text-anchor": "bottom",
+        "text-offset": [
+          0,
+          0.175
+        ],
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#000000"
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Local Roads)/label/Default",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "roads_local (Local Roads)/label",
+      "minzoom": 13.85,
+      "layout": {
+        "symbol-placement": "line",
+        "symbol-spacing": 1000,
+        "text-font": [
+          "Arial Regular"
+        ],
+        "text-size": 10.6667,
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#242424",
+        "text-halo-color": "rgba(255,255,255,0.99)",
+        "text-halo-width": 1.51181
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_local (Minor Roads)/label/Default",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "roads_local (Minor Roads)/label",
+      "minzoom": 13.85,
+      "layout": {
+        "symbol-placement": "line",
+        "symbol-spacing": 1000,
+        "text-font": [
+          "Arial Regular"
+        ],
+        "text-size": 11.3333,
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#242424",
+        "text-halo-color": "rgba(255,255,255,0.99)",
+        "text-halo-width": 1.51181
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_regional/label/Default",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "roads_regional/label",
+      "minzoom": 9.53,
+      "layout": {
+        "symbol-placement": "line",
+        "symbol-spacing": 1000,
+        "text-font": [
+          "Arial Regular"
+        ],
+        "text-size": 12,
+        "text-letter-spacing": 0.04,
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#242424",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.51181
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_national/label/Primary",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "roads_national/label",
+      "filter": [
+        "==",
+        "_label_class1",
+        1
+      ],
+      "minzoom": 8.21,
+      "layout": {
+        "symbol-placement": "line",
+        "symbol-spacing": 1000,
+        "text-font": [
+          "Arial Bold"
+        ],
+        "text-size": 11.3333,
+        "text-letter-spacing": 0.04,
+        "text-field": "{_name1}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#FDFDFD",
+        "text-halo-color": "#8D8D8D",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/Roads/roads_national/label/Motorway",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "roads_national/label",
+      "filter": [
+        "==",
+        "_label_class",
+        0
+      ],
+      "minzoom": 7.21,
+      "layout": {
+        "symbol-placement": "line",
+        "symbol-spacing": 1000,
+        "text-font": [
+          "Arial Bold"
+        ],
+        "text-size": 11.3333,
+        "text-letter-spacing": 0.04,
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#FDFDFD",
+        "text-halo-color": "#808080",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/towns & villages/label/Village",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "towns & villages",
+      "minzoom": 9.21,
+      "layout": {
+        "text-font": [
+          "Arial Regular"
+        ],
+        "text-size": 12,
+        "text-anchor": "center",
+        "text-field": "{_name1}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#F3F3F3",
+        "text-halo-width": 1.51181
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/towns & villages/label/Town",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "towns & villages",
+      "minzoom": 8.21,
+      "layout": {
+        "text-font": [
+          "Arial Bold"
+        ],
+        "text-size": 14.6667,
+        "text-anchor": "center",
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#F3F3F3",
+        "text-halo-width": 1.51181
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/cities",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "cities",
+      "minzoom": 6.53,
+      "layout": {
+        "icon-image": "OS Open Zoomstack - Road/cities",
+        "icon-allow-overlap": true,
+        "text-font": [
+          "Arial Bold"
+        ],
+        "text-size": 16,
+        "text-anchor": "center",
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "rgba(240,240,240,0)",
+        "text-color": "#000000",
+        "text-halo-color": "#F3F3F3",
+        "text-halo-width": 1.51181
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/national parks",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "national parks",
+      "minzoom": 6.53,
+      "layout": {
+        "icon-image": "OS Open Zoomstack - Road/national parks",
+        "icon-allow-overlap": true,
+        "text-font": [
+          "Arial Bold"
+        ],
+        "text-size": 10.6667,
+        "text-anchor": "center",
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "icon-color": "rgba(240,240,240,0)",
+        "text-color": "#707070",
+        "text-halo-color": "#F3F3F3",
+        "text-halo-width": 1.51181
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/country & capital/label/Capital",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "country & capital",
+      "minzoom": 6.53,
+      "layout": {
+        "text-font": [
+          "Arial Bold"
+        ],
+        "text-size": 16,
+        "text-anchor": "center",
+        "text-field": "{_name1}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#000000",
+        "text-halo-color": "#F3F3F3",
+        "text-halo-width": 1.51181
+      }
+    },
+    {
+      "id": "OS Open Zoomstack - Road/country & capital/label/Country",
+      "type": "symbol",
+      "source": "esri",
+      "source-layer": "country & capital",
+      "minzoom": 6.53,
+      "maxzoom": 7.53,
+      "layout": {
+        "text-font": [
+          "Constantia Bold"
+        ],
+        "text-size": 21.3333,
+        "text-anchor": "center",
+        "text-letter-spacing": 0.35,
+        "text-field": "{_name}",
+        "text-optional": true
+      },
+      "paint": {
+        "text-color": "#000000"
+      }
+    }
+  ]
+}
