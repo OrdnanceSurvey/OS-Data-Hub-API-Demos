@@ -6,7 +6,7 @@ We will explain two options:
 * Dynamically adapting the pre-defined style
 * Creating your own style within the code
 
-We will explain all three for OpenLayers, the principles are similar for MapBoxGL JS and Arc JS.
+We will explain both for OpenLayers, the principles are similar for MapBoxGL JS and Arc JS.
 
 It is also possible to create your own style from scratch and to host this locally on your server. This example has been ommitted for the time being and will be added at a later date.
 
