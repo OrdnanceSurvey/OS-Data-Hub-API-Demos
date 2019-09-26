@@ -22,12 +22,12 @@ For this example we will only load the styles relating to the national parks and
    Start with:
    ```
     "version": 8,
-    "sprite": "https://osdatahubapi.os.uk/omse/vts/resources/sprites/sprite",
-    "glyphs": "https://osdatahubapi.os.uk/omse/vts/resources/fonts/{fontstack}/{range}.pbf",
+    "sprite": "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1/resources/sprites/sprite",
+    "glyphs": "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1/resources/fonts/{fontstack}/{range}.pbf",
     "sources": {
       "esri": {
         "type": "vector",
-        "url": "https://osdatahubapi.os.uk/omse/vts/"
+        "url": "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1/"
       }
     },
     "layers": []
@@ -108,6 +108,6 @@ For this example we will only load the styles relating to the national parks and
    ```
    This will provide the faint background for GB and also display national parks and their labels in the same style of the original style.
 
-7. Open the index.html file in a browser and you should see the national parks on a faint background of GB. Due to where the view defaults to in our examples you will have to zoom out a little to see the national parks.
+7. Open the index.html file in a browser and you should see the national parks on a faint background of GB.
 
 While you could change the style on-the-fly as in the very first example, this method is a little easier to maintain. If for some reason the style we pre-define changes it will not have any impact on your styling as you have "hard-coded" the style.

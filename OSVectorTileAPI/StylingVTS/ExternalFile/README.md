@@ -6,7 +6,7 @@ Particularly suited to complete styling changes and custom styles.
 
 This example will use a changed copy of the existing style. We are mainly interested in demonstrating how an external file can be used to define the style. In our case the resulting map will have the same content as the original in the same order and hierarchy, just different colours.
 
-1. To begin, get a copy of the full pre-defined style from our service by calling https://osdatahubapi.os.uk/omse/vts/resources/styles/?key={Your Key} in your browser.
+1. To begin, get a copy of the full pre-defined style from our service by calling https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1/resources/styles/?key={Your Key} in your browser.
    Search online for a "JSON pretty print" service which will turn the minified JSON data you received back into a more readable format.
    
    Take a look at this to get a better understanding of the structure. You will notice that each element contains a combination of defining attributes and style attributes. We can access, filter and change all of these.
