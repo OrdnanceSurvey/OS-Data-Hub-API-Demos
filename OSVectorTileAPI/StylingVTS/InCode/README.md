@@ -1,7 +1,5 @@
 # Creating your own style within the code
 
-See the "InCode" folder for a completed example.
-
 Especially suited to cases where you only require a small number of available features to be displayed. For example only buildings or (as in our example) national parks. There is no hard and fast rule when to use this method or when to use a separate file for the style, this is largely personal preference.
 
 For this example we will only load the styles relating to the national parks and a very faint representation of the landmass of GB.
@@ -9,11 +7,13 @@ For this example we will only load the styles relating to the national parks and
 1. Open the map.js file in the main "using the VTS in OpenLayers demo" in a text editor.
    If you have followed the previous tutorial we suggest you revert your changes first.
 
-2. Find the line that reads `var style = results[1];`
-
-3. Change this to:
+2. Remove the line beginning with `var promise2 =` and remove `promise2, ` from the following section:
    ```
-   // var style = results[1];
+   Promise.all([promise1, promise2, promise3])
+   ```
+
+3. Find the line that reads `var style = results[1];` and replace it with:
+   ```
    var style = {};
    ```
    This disables the automatic loading of the pre-defined style and sets up our in-line style variable.
@@ -108,6 +108,8 @@ For this example we will only load the styles relating to the national parks and
    ```
    This will provide the faint background for GB and also display national parks and their labels in the same style of the original style.
 
-7. Open the index.html file in a browser and you should see the national parks on a faint background of GB.
+7. Replace `var sprite = results[2];` with `var sprite = results[1];`
+
+8. Open the index.html file in a browser and you should see the national parks on a faint background of GB. You may need to zoom out a little to see the national parks due to where we have chosen as a default centre for our demos.
 
 While you could change the style on-the-fly as in the very first example, this method is a little easier to maintain. If for some reason the style we pre-define changes it will not have any impact on your styling as you have "hard-coded" the style.

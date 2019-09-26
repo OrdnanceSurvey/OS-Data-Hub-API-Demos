@@ -2,12 +2,13 @@
 
 Our Vector Tile Service provides a readily usable style, based on the available features. If you wish to adapt the existing style or create your own, you can easily do so.
 
-We will explain three options:
+We will explain two options:
 * Dynamically adapting the pre-defined style
 * Creating your own style within the code
-* Creating your own style in a separate file
 
 We will explain all three for OpenLayers, the principles are similar for MapBoxGL JS and Arc JS.
+
+It is also possible to create your own style from scratch and to host this locally on your server. This example has been ommitted for the time being and will be added at a later date.
 
 Before we start please ensure you have a working version of the DataHub VTS Demo for OpenLayers. You can find out how to get this in the Getting Started Guide.
 

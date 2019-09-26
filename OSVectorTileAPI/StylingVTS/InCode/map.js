@@ -29,11 +29,10 @@ function setupLayer() {
     instructions.classList.add("hidden");
 
     var promise1 = fetch(serviceUrl + '?key=' + key).then(response => response.json());
-    var promise2 = fetch(serviceUrl + '/resources/styles?key=' + key).then(response => response.json());
     var promise3 = fetch(serviceUrl + '/resources/sprites/sprite.json?key=' + key).then(response => response.json());
     var spriteImageUrl = serviceUrl + '/resources/sprites/sprite.png?key=' + key
 
-    Promise.all([promise1, promise2, promise3])
+    Promise.all([promise1, promise3])
         .then(results => {
             var service = results[0];
 //            var style = results[1];
@@ -98,7 +97,7 @@ function setupLayer() {
               ]
             };
 
-            var sprite = results[2];
+            var sprite = results[1];
 
             // Read the tile grid dimensions from the service meta-data
             var extent = [service.fullExtent.xmin, service.fullExtent.ymin, service.fullExtent.xmax, service.fullExtent.ymax];

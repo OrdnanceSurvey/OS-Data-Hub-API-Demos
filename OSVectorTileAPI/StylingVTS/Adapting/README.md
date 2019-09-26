@@ -1,7 +1,5 @@
 # Adapting the pre-defined style
 
-See the "Adapting" folder for a completed example.
-
 This method is particularly useful if you are aiming to highlight a feature in the existing style or wish to change a small number of elements. Since the method is manipulating the existing style on-the-fly it is taking browser resources to do so and may feel slow on low spec devices depending on the amount of change.
 
 For this example we will change the colour of all roads to bright red.
