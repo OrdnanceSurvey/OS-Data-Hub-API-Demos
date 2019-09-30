@@ -136,7 +136,7 @@ function setupLayer() {
                 message.textContent = 'Could not connect to the API. Ensure you are entering a project API key for a project that contains the OS Vector Tile API';
             });
 
-            var center = [-121099, 7161610];
+            var center = [-343282, 7259502];
             if(wkid === 27700) {
                 var point = new ol.geom.Point(center);
                 point.transform('EPSG:3857', 'EPSG:27700');
