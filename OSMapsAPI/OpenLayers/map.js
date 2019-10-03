@@ -64,7 +64,8 @@ function setupLayer() {
                 zoom: 10
             }
             
-            // Some additional parameters if we are using a layer in EPSG:3857
+            // If we are using a layer in British National Grid (EPSG:27700), then tranform the center point from
+            // EPSG:3857 into BNG, and adjust the zoom level.
             if(options.projection === bng) {
                 var point = new ol.geom.Point(viewOptions.center);
                 point.transform('EPSG:3857', bng);
@@ -72,14 +73,14 @@ function setupLayer() {
                 viewOptions.zoom = 3;
             }
             
-            // Define the main map element
+            // Create the map object and connect it to the 'map' element in the html
             map = new ol.Map({
                 target: 'map',
                 layers: [layer],
                 view: new ol.View(viewOptions)
             });
             
-            // Alter map controls to make sure they don't collapse into each other
+            // Expand the attribution control, so that the the copyright message is visible
             map.getControls().forEach(control => {
                 if(control instanceof ol.control.Attribution) {
                     control.setCollapsed(false);

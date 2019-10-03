@@ -28,14 +28,15 @@ function setupLayer() {
     message.textContent = 'To view the map, please enter a valid API key.';
     instructions.classList.add("hidden");
     
-    // Our Vector Tile Service requires the main Capabilities url, the style (our default one in this case) and due to the style elements used the sprite file
+    // This example requires the main Capabilities url, the style (our default one in this case), and due to the
+    // style elements used in the the default style we also need the sprite file.
     // If you define your own style you may only need the main Capabilities url
-    var promise1 = fetch(serviceUrl + '?key=' + key).then(response => response.json());
-    var promise2 = fetch(serviceUrl + '/resources/styles?key=' + key).then(response => response.json());
-    var promise3 = fetch(serviceUrl + '/resources/sprites/sprite.json?key=' + key).then(response => response.json());
+    var capabilityPromise = fetch(serviceUrl + '?key=' + key).then(response => response.json());
+    var stylePropmise = fetch(serviceUrl + '/resources/styles?key=' + key).then(response => response.json());
+    var spritePromise = fetch(serviceUrl + '/resources/sprites/sprite.json?key=' + key).then(response => response.json());
     var spriteImageUrl = serviceUrl + '/resources/sprites/sprite.png?key=' + key
 
-    Promise.all([promise1, promise2, promise3])
+    Promise.all([capabilityPromise, stylePropmise, spritePromise])
         .then(results => {
             var service = results[0];
             var style = results[1];
@@ -89,7 +90,7 @@ function setupLayer() {
                 center = point.getCoordinates();
             }
             
-            // Define the main map element
+            // Create the map object and connect it to the 'map' element in the html
             map = new ol.Map({
                 target: 'map',
                 layers: [layer],
@@ -99,7 +100,7 @@ function setupLayer() {
                     zoom: Math.floor(resolutions.length / 2)
                 })
             });
-            // Alter map controls to make sure they don't collapse into each other
+            // Expand the attribution control, so that the the copyright message is visible
             map.getControls().forEach(control => {
                 if(control instanceof ol.control.Attribution) {
                     control.setCollapsed(false);

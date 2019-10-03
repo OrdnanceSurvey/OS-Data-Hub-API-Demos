@@ -75,13 +75,13 @@ function setupLayer() {
         }
     );
     
-    // Added error handling in case the tile load fails
+    // Add error handling in case the tile load fails
     layer.on('tileerror', function(event) {
         message.classList.add("warning");
         message.textContent = 'Could not connect to the API. Ensure you are entering a project API key for a project that contains the OS Maps API';
         instructions.classList.remove("hidden");
     });
     mapOptions.layers = layer;
-    // Create the actual map element
+    // Create the map object and connect it to the 'map' element in the html
     map = L.map('map', mapOptions);
 }
