@@ -32,7 +32,7 @@ function setupLayer() {
     // style elements used in the the default style we also need the sprite file.
     // If you define your own style you may only need the main Capabilities url
     var capabilityPromise = fetch(serviceUrl + '?key=' + key).then(response => response.json());
-    var stylePropmise = fetch(serviceUrl + '/resources/styles?key=' + key).then(response => response.json());
+    var stylePromise = fetch(serviceUrl + '/resources/styles?key=' + key).then(response => response.json());
     var spritePromise = fetch(serviceUrl + '/resources/sprites/sprite.json?key=' + key).then(response => response.json());
     var spriteImageUrl = serviceUrl + '/resources/sprites/sprite.png?key=' + key
 
