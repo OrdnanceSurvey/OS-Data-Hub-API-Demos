@@ -27,7 +27,9 @@ function setupLayer() {
     message.classList.remove("warning");
     message.textContent = 'To view the map, please enter a valid API key.';
     instructions.classList.add("hidden");
-
+    
+    // Our Vector Tile Service requires the main Capabilities url, the style (our default one in this case) and due to the style elements used the sprite file
+    // If you define your own style you may only need the main Capabilities url
     var promise1 = fetch(serviceUrl + '?key=' + key).then(response => response.json());
     var promise2 = fetch(serviceUrl + '/resources/styles?key=' + key).then(response => response.json());
     var promise3 = fetch(serviceUrl + '/resources/sprites/sprite.json?key=' + key).then(response => response.json());
@@ -46,7 +48,8 @@ function setupLayer() {
             var tileSize = service.tileInfo.rows;
             var tiles = service.tiles[0];
             var wkid = service.tileInfo.spatialReference.latestWkid;
-
+            
+            // Set up the options required for the VTS source in OpenLayers
             var options = {
                 format: new ol.format.MVT(),
                 url: tiles + '?key=' + key,
@@ -68,21 +71,25 @@ function setupLayer() {
                     layer.paint['icon-color'] = layer.paint['icon-color'].replace(',0)', ',1)');
                 }
             });
-
+            
+            // This is the main styling function for the VTS
+            // We use the default style fetched in the promise here, though "style" can be any JSON VTS style
             var styleFn = olms.stylefunction(layer, style, 'esri', resolutions, sprite, spriteImageUrl);
 
             source.on('tileloaderror', function(event) {
                 message.classList.add("warning");
                 message.textContent = 'Could not connect to the API. Ensure you are entering a project API key for a project that contains the OS Vector Tile API';
             });
-
+            
+            // Set the default center of the map view
             var center = [-121099, 7161610];
             if(wkid === 27700) {
                 var point = new ol.geom.Point(center);
                 point.transform('EPSG:3857', 'EPSG:27700');
                 center = point.getCoordinates();
             }
-
+            
+            // Define the main map element
             map = new ol.Map({
                 target: 'map',
                 layers: [layer],
@@ -92,6 +99,7 @@ function setupLayer() {
                     zoom: Math.floor(resolutions.length / 2)
                 })
             });
+            // Alter map controls to make sure they don't collapse into each other
             map.getControls().forEach(control => {
                 if(control instanceof ol.control.Attribution) {
                     control.setCollapsed(false);

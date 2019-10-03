@@ -1,10 +1,14 @@
+// We will return 10 results at a time
 let startIndex = 0;
 let count = 10;
 
+// Return the first 10 results
 window.query = function() {
     startIndex = 0;
     runQuery();
 }
+
+// Return the next 10 results (on each run of the loadMore function)
 window.loadMore = function() {
     startIndex += count;
     runQuery();
@@ -30,18 +34,26 @@ function runQuery() {
     message.classList.remove("warning");
     message.textContent = 'To run the query, please enter a valid API key.';
     instructions.classList.add("hidden");
-
+    
+    // The parameters required to call the WFS service
     var parameters = {
         key: key,
         request: 'GetFeature',
         service: 'WFS',
         version: '2.0.0',
+        // typeName defines tha layer we are querying
+        // You can replace this with another layer if you wish
         typeName: 'Sites_FunctionalSite',
+        // The filter is applied to the data on the server before returning it back to you
+        // In this case we are filtering "SiteFunction" for "Airport"
+        // Information about the accepted filter types can be found in the WFS
+        // Information about the values to filter on can be found in the individual product specifications
         filter: '<Filter><PropertyIsEqualTo><PropertyName>SiteFunction</PropertyName><Literal>Airport</Literal></PropertyIsEqualTo></Filter>',
         startIndex: startIndex,
         count: count,
         outputFormat: 'GEOJSON'
     };
+    // We encode the parameters and create the URL
     var encodedParameters = Object.keys(parameters)
         .map(paramName => paramName + '=' + encodeURI(parameters[paramName]))
         .join('&');
@@ -59,7 +71,8 @@ function runQuery() {
                 more.disabled = false;
             }
             results.innerHTML = '';
-
+            
+            // If results are returned we display them one by one
             json.features.forEach(feature => {
                 // Create a heading using the feature name
                 var node = document.createElement('h1');

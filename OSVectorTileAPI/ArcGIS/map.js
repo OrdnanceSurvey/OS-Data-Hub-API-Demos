@@ -9,10 +9,11 @@ require(
         "dojo/domReady!"
     ],
     function(Map, MapView, VectorTileLayer, Point, SpatialReference, esriConfig) {
-
+        
         var vectorLayerUrl = "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1";
         var key;
 
+        // ArcGIS JS reads all required information directly from the main service URL
         esriConfig.request.interceptors.push({
             urls: vectorLayerUrl,
             before: function(params) {
@@ -24,7 +25,8 @@ require(
         });
 
         var map = new Map();
-
+        
+        // Setting up the map view with default center, spatial reference, scale and zoom constraints
         var view = new MapView({
             map: map,
             container: "map",
@@ -39,10 +41,11 @@ require(
                 maxScale: 1600000
             }
         });
-
+        
         window.setupLayer = function() {
             map.layers.removeAll();
-
+            
+            // This sets up the API key input at the start
             key = document.getElementById('keyInput').value;
             var message = document.getElementById('message');
             var instructions = document.getElementById('instructions');
@@ -56,7 +59,8 @@ require(
             message.classList.remove("warning");
             message.textContent = 'To view the map, please enter a valid API key.';
             instructions.classList.add("hidden");
-
+            
+            // This sets up the layer for the map
             var tileLayer = new VectorTileLayer({
                 url: vectorLayerUrl,
                 copyright: '&copy; <a href="http://www.ordnancesurvey.co.uk/">Ordnance Survey</a>'

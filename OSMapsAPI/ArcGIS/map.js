@@ -12,6 +12,7 @@ require(
         var promise = projection.load();
 
         window.setupLayer = function() {
+            // This sets up the API key entry at the beginning
             var key = document.getElementById('keyInput').value;
             var message = document.getElementById('message');
             var instructions = document.getElementById('instructions');
@@ -26,7 +27,8 @@ require(
             message.classList.remove("warning");
             message.textContent = 'To view the map, please enter a valid API key.';
             instructions.classList.add("hidden");
-
+            
+            // Defining the WMTS layer using the service URL to pull in the main settings
             var wmtsLayer = new WMTSLayer({
                 url: 'https://osdatahubapi.os.uk/OSMapsAPI/wmts/v1',
                 activeLayer: {
@@ -47,7 +49,9 @@ require(
             var map = new Map({
                 layers: [wmtsLayer]
             });
-
+            
+            // Once the projection loads we define the center coordinates in EPSG:27700
+            // Then set up the map view
             promise.then(() => {
                 var center = new Point({
                     x: 425168,
