@@ -5,7 +5,8 @@ function setupLayer() {
         map.remove();
         map = null;
     }
-
+    
+    // Setting up the initial API key input
     var key = document.getElementById('keyInput').value;
     var message = document.getElementById('message');
     var instructions = document.getElementById('instructions');
@@ -20,6 +21,8 @@ function setupLayer() {
     message.textContent = 'To view the map, please enter a valid API key.';
     instructions.classList.add("hidden");
 
+    // This sets up the actual VTS layer
+    // Center coordinates are defined in EPSG:3857 lon/lat and we are asking for srs=3857 in the "transformRequest"
     var serviceUrl = "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1";
     map = new mapboxgl.Map({
         container: 'map',

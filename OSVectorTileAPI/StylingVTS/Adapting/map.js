@@ -28,12 +28,15 @@ function setupLayer() {
     message.textContent = 'To view the map, please enter a valid API key.';
     instructions.classList.add("hidden");
 
-    var promise1 = fetch(serviceUrl + '?key=' + key).then(response => response.json());
-    var promise2 = fetch(serviceUrl + '/resources/styles?key=' + key).then(response => response.json());
-    var promise3 = fetch(serviceUrl + '/resources/sprites/sprite.json?key=' + key).then(response => response.json());
+    // This example requires the main Capabilities url, the style (our default one in this case), and due to the
+    // style elements used in the the default style we also need the sprite file.
+    // If you define your own style you may only need the main Capabilities url
+    var capabilityPromise = fetch(serviceUrl + '?key=' + key).then(response => response.json());
+    var stylePromise = fetch(serviceUrl + '/resources/styles?key=' + key).then(response => response.json());
+    var spritePromise = fetch(serviceUrl + '/resources/sprites/sprite.json?key=' + key).then(response => response.json());
     var spriteImageUrl = serviceUrl + '/resources/sprites/sprite.png?key=' + key
 
-    Promise.all([promise1, promise2, promise3])
+    Promise.all([capabilityPromise, stylePropmise, spritePromise])
         .then(results => {
             var service = results[0];
             var style = results[1];
@@ -47,6 +50,7 @@ function setupLayer() {
             var tiles = service.tiles[0];
             var wkid = service.tileInfo.spatialReference.latestWkid;
 
+            // Set up the options required for the VTS source in OpenLayers
             var options = {
                 format: new ol.format.MVT(),
                 url: tiles + '?key=' + key,
@@ -67,11 +71,14 @@ function setupLayer() {
                 if(layer.paint && layer.paint['icon-color']) {
                     layer.paint['icon-color'] = layer.paint['icon-color'].replace(',0)', ',1)');
                 }
+                // Customise the road features, painting them red
                 if (layer['source-layer'].startsWith('road')) {
                    layer.paint['line-color'] = '#FF0000';
                 }
             });
 
+            // This is the main styling function for the VTS
+            // We use the default style fetched in the promise here, though "style" can be any JSON VTS style
             var styleFn = olms.stylefunction(layer, style, 'esri', resolutions, sprite, spriteImageUrl);
 
             source.on('tileloaderror', function(event) {
@@ -79,6 +86,7 @@ function setupLayer() {
                 message.textContent = 'Could not connect to the API. Ensure you are entering a project API key for a project that contains the OS Vector Tile API';
             });
 
+            // Set the default center of the map view
             var center = [-121099, 7161610];
             if(wkid === 27700) {
                 var point = new ol.geom.Point(center);
@@ -86,6 +94,7 @@ function setupLayer() {
                 center = point.getCoordinates();
             }
 
+            // Create the map object and connect it to the 'map' element in the html
             map = new ol.Map({
                 target: 'map',
                 layers: [layer],
@@ -95,6 +104,7 @@ function setupLayer() {
                     zoom: Math.floor(resolutions.length / 2)
                 })
             });
+            // Expand the attribution control, so that the the copyright message is visible
             map.getControls().forEach(control => {
                 if(control instanceof ol.control.Attribution) {
                     control.setCollapsed(false);

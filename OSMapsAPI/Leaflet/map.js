@@ -29,7 +29,8 @@ function setupLayer() {
     message.classList.remove("warning");
     message.textContent = 'To view the map, please enter a valid API key.';
     instructions.classList.add("hidden");
-
+    
+    // Set up default view options for EPSG:3857
     var tileMatrix = 'EPSG:3857';
     var mapOptions = {
         maxZoom: 20,
@@ -38,6 +39,8 @@ function setupLayer() {
         maxBounds: [[49, -6.5],[61, 2.3]],
         zoom: 10
     };
+    
+    // Make some specific changes relevant to EPSG:27700 only
     if(style.indexOf('27700') !== -1) {
         tileMatrix = 'EPSG:27700';
         mapOptions.crs = crs;
@@ -45,7 +48,8 @@ function setupLayer() {
         mapOptions.minZoom = 0;
         mapOptions.zoom = 4;
     }
-
+    
+    // Set up the main url parameters
     var url = 'https://osdatahubapi.os.uk/OSMapsAPI/wmts/v1';
     var parameters = {
         key: key,
@@ -65,15 +69,19 @@ function setupLayer() {
     var layer =  new L.TileLayer(
         url + '?' + parameterString,
         {
+            // Add appropriate attribution
             attribution: '&copy; <a href="http://www.ordnancesurvey.co.uk/">Ordnance Survey</a>',
             maxZoom: 20
         }
     );
+    
+    // Add error handling in case the tile load fails
     layer.on('tileerror', function(event) {
         message.classList.add("warning");
         message.textContent = 'Could not connect to the API. Ensure you are entering a project API key for a project that contains the OS Maps API';
         instructions.classList.remove("hidden");
     });
     mapOptions.layers = layer;
+    // Create the map object and connect it to the 'map' element in the html
     map = L.map('map', mapOptions);
 }

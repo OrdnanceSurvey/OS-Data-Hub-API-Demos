@@ -28,14 +28,16 @@ function setupLayer() {
     message.textContent = 'To view the map, please enter a valid API key.';
     instructions.classList.add("hidden");
 
-    var promise1 = fetch(serviceUrl + '?key=' + key).then(response => response.json());
-    var promise3 = fetch(serviceUrl + '/resources/sprites/sprite.json?key=' + key).then(response => response.json());
+    // This example requires the main Capabilities url, and the default sprite file. We define our own style, rather
+    // then loading the default style from the service.
+    var capabilityPromise = fetch(serviceUrl + '?key=' + key).then(response => response.json());
+    var spritePromise = fetch(serviceUrl + '/resources/sprites/sprite.json?key=' + key).then(response => response.json());
     var spriteImageUrl = serviceUrl + '/resources/sprites/sprite.png?key=' + key
 
-    Promise.all([promise1, promise3])
+    Promise.all([capabilityPromise, spritePromise])
         .then(results => {
             var service = results[0];
-//            var style = results[1];
+            var sprite = results[1];
             var style = {
               "version": 8,
               "sprite": "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1/resources/sprites/sprite",
@@ -97,7 +99,6 @@ function setupLayer() {
               ]
             };
 
-            var sprite = results[1];
 
             // Read the tile grid dimensions from the service meta-data
             var extent = [service.fullExtent.xmin, service.fullExtent.ymin, service.fullExtent.xmax, service.fullExtent.ymax];
@@ -107,6 +108,7 @@ function setupLayer() {
             var tiles = service.tiles[0];
             var wkid = service.tileInfo.spatialReference.latestWkid;
 
+            // Set up the options required for the VTS source in OpenLayers
             var options = {
                 format: new ol.format.MVT(),
                 url: tiles + '?key=' + key,
@@ -129,6 +131,8 @@ function setupLayer() {
                 }
             });
 
+            // This is the main styling function for the VTS
+            // We use the custom style that we defined earlier
             var styleFn = olms.stylefunction(layer, style, 'esri', resolutions, sprite, spriteImageUrl);
 
             source.on('tileloaderror', function(event) {
@@ -136,6 +140,8 @@ function setupLayer() {
                 message.textContent = 'Could not connect to the API. Ensure you are entering a project API key for a project that contains the OS Vector Tile API';
             });
 
+            // Set the default center of the map view
+            // This example is centered on the Lake District, which is one of the national parks within the zoomstack data
             var center = [-343282, 7259502];
             if(wkid === 27700) {
                 var point = new ol.geom.Point(center);
@@ -143,6 +149,7 @@ function setupLayer() {
                 center = point.getCoordinates();
             }
 
+            // Create the map object and connect it to the 'map' element in the html
             map = new ol.Map({
                 target: 'map',
                 layers: [layer],
@@ -152,6 +159,7 @@ function setupLayer() {
                     zoom: Math.floor(resolutions.length / 2)
                 })
             });
+            // Expand the attribution control, so that the the copyright message is visible
             map.getControls().forEach(control => {
                 if(control instanceof ol.control.Attribution) {
                     control.setCollapsed(false);
