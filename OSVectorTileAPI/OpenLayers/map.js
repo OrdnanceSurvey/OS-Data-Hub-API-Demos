@@ -36,7 +36,7 @@ function setupLayer() {
     var spritePromise = fetch(serviceUrl + '/resources/sprites/sprite.json?key=' + key).then(response => response.json());
     var spriteImageUrl = serviceUrl + '/resources/sprites/sprite.png?key=' + key
 
-    Promise.all([capabilityPromise, stylePropmise, spritePromise])
+    Promise.all([capabilityPromise, stylePromise, spritePromise])
         .then(results => {
             var service = results[0];
             var style = results[1];
