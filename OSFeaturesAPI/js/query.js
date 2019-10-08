@@ -6,13 +6,13 @@ let count = 10;
 window.query = function() {
     startIndex = 0;
     runQuery();
-}
+};
 
 // Return the next 10 results (on each run of the loadMore function)
 window.loadMore = function() {
     startIndex += count;
     runQuery();
-}
+};
 
 function runQuery() {
     var key = document.getElementById('keyInput').value;

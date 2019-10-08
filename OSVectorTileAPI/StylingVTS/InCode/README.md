@@ -34,7 +34,7 @@ For this example we will only load the styles relating to the national parks and
    "sources" describes the source of the service and is best left as it currently is.
    Our main focus will be on the "layers" section.
   
-* Between the `[]` of `"layers": []` we can now include the various elemets we want to style.
+* Between the `[]` of `"layers": []` we can now include the various elements we want to style.
    To demonstrate this let's add the background colour for GB:
    ```
    {

@@ -8,7 +8,7 @@ We will explain two options:
 
 We will explain both for OpenLayers, the principles are similar for MapBoxGL JS and Arc JS.
 
-It is also possible to create your own style from scratch and to host this locally on your server. This example has been ommitted for the time being and will be added at a later date.
+It is also possible to create your own style from scratch and to host this locally on your server. This example has been omitted for the time being and will be added at a later date.
 
 Before we start please ensure you have a working version of the DataHub VTS Demo for OpenLayers. You can find out how to get this in the Getting Started Guide.
 
