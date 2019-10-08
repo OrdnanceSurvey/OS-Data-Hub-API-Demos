@@ -20,7 +20,7 @@ const messageText = ' Check your network connection, or try restarting the serve
 var select;
 var url = '/proxy/OSMapsAPI/wmts/v1?request=GetCapabilities&service=WMTS';
 fetch(url)
-    .then(response => response.text(), error => {})
+    .then(response => response.text())
     .then(text => {
         var parser = new ol.format.WMTSCapabilities();
         var result = parser.read(text);
@@ -105,7 +105,7 @@ function getURLForExtent(extent) {
     </PropertyIsEqualTo>
   </And>
 </Filter>`
-    }
+    };
     const urlParameters = Object.keys(wfsParameters)
         .map(param => param + '=' + encodeURI(wfsParameters[param]))
         .join('&');

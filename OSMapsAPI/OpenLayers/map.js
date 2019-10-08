@@ -62,7 +62,7 @@ function setupLayer() {
                 center: [-121099, 7161610],
                 resolutions: options.tileGrid.getResolutions(),
                 zoom: 10
-            }
+            };
             
             // If we are using a layer in British National Grid (EPSG:27700), then tranform the center point from
             // EPSG:3857 into BNG, and adjust the zoom level.

@@ -34,7 +34,7 @@ function setupLayer() {
     var capabilityPromise = fetch(serviceUrl + '?key=' + key).then(response => response.json());
     var stylePromise = fetch(serviceUrl + '/resources/styles?key=' + key).then(response => response.json());
     var spritePromise = fetch(serviceUrl + '/resources/sprites/sprite.json?key=' + key).then(response => response.json());
-    var spriteImageUrl = serviceUrl + '/resources/sprites/sprite.png?key=' + key
+    var spriteImageUrl = serviceUrl + '/resources/sprites/sprite.png?key=' + key;
 
     Promise.all([capabilityPromise, stylePromise, spritePromise])
         .then(results => {
@@ -62,7 +62,7 @@ function setupLayer() {
                     resolutions,
                     tileSize
                 })
-            }
+            };
             var source = new ol.source.VectorTile(options);
             var layer = new ol.layer.VectorTile({ source: source });
 
@@ -77,9 +77,9 @@ function setupLayer() {
                 }
             });
 
-            // This is the main styling function for the VTS
+            // Setup the styling for the vector tile layer.
             // We use the default style fetched in the promise here, though "style" can be any JSON VTS style
-            var styleFn = olms.stylefunction(layer, style, 'esri', resolutions, sprite, spriteImageUrl);
+            olms.stylefunction(layer, style, 'esri', resolutions, sprite, spriteImageUrl);
 
             source.on('tileloaderror', function(event) {
                 message.classList.add("warning");

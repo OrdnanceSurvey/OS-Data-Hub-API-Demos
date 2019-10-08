@@ -27,7 +27,7 @@ require(
         var map = new Map();
         
         // Setting up the map view with default center, spatial reference, scale and zoom constraints
-        var view = new MapView({
+        new MapView({
             map: map,
             container: "map",
             center: new Point({
