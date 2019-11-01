@@ -15,6 +15,11 @@
   
 * A working internet connection
 
+# Status of the code
+
+This script is intended to provide **an idea** of how an automated download script **could** be created. The script does not feature any error handling or intelligent checking of input or output.  
+While it demonstrates the **basic principles of making automated downloads work** in an operating system agnostic way, more work would be required to ensure this script is safe to use outside of development environments.
+
 # Usage
 
 ## Basic commandline syntax
@@ -59,9 +64,13 @@ All parameters are sanity checked against the API where possible. Location is ch
 If ```version``` is found a product input is required. If the test passes and a newer version is available the script will continue with the download sequence expecting the inputs required for download. If the test fails and no newer version is available the script will exit with an explanatory message.
 
 * product=
+  
   The name of the product you wish to download.
+  
 * version=
+  
   The version data of the product you hold or wish to test against. This must be in YYYY-MM numeric format (e.g. 2019-04).
+  
 
 ## Examples
 
