@@ -1,3 +1,11 @@
+The scripts in this repository complement the video tutorial explaining how to create a python based script for automated downloads using the OS Downloads API.  
+We aim to add more examples and practical applications to this repository over time.
+
+# Status of the code
+
+This script is intended to provide **an idea** of how an automated download script **could** be created. The script does not feature any error handling or intelligent checking of input or output.  
+While it demonstrates the **basic principles of making automated downloads work** in an operating system agnostic way, more work would be required to ensure this script is safe to use outside of development environments.
+
 # Pre-requisites
 
 * A working installation of Python.
@@ -14,11 +22,6 @@
   This should be possible on all but the most securely locked down operating systems.
   
 * A working internet connection
-
-# Status of the code
-
-This script is intended to provide **an idea** of how an automated download script **could** be created. The script does not feature any error handling or intelligent checking of input or output.  
-While it demonstrates the **basic principles of making automated downloads work** in an operating system agnostic way, more work would be required to ensure this script is safe to use outside of development environments.
 
 # Usage
 
