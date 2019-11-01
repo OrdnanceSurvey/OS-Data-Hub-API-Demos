@@ -8,7 +8,7 @@ For help with OS Maps API for Enterprise see the separate [API docs](https://api
 
 ## Using the demos
 
-Each of the demos needs an API key to access the OS Data Hub APIs.
+Each of the demos needs an API key to access the OS Data Hub APIs. The only exception to this is the OS Downloads API.
 
 Register for API keys using the [OS Data Hub](https://osdatahub.os.uk/):
 - Sign up to the OS Data Hub, and create a project
@@ -41,6 +41,11 @@ Note: A production application would need to add extra protection to the server,
 to make API calls through the proxy are legitimate users of your application. Failure to do so would allow malicious
 users to make API requests with your API key, even though they do not have direct access to it.
 
+### OS Downloads API
+
+This example requires Python version 3 to be installed on your system. This is distributed as standard with a number of desktop GIS packages. Alternatively you can download the appropriate version for your operating system directly.
+
+The script also requires the "Request" moduule to be installed in Python. Information on how to obtain and install this can be found on the [project page](https://pypi.org/project/requests/2.7.0/).
 
 ## License
 
