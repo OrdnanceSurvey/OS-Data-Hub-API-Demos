@@ -38,13 +38,21 @@ These parameters will be requested as user input if they are missing. Where a pa
 All parameters are sanity checked against the API where possible. Location is checked against your file system, though not extensively.
 
 * product=
+  
   The name of the product you wish to download.
+  
 * areas=
+  
   The area or areas of the product you wish to download.
+  
 * format=
+  
   The name of the format for the product you are requesting to download. Please note that the registered trademark symbol in the ```ESRI® Shapefile``` can cause problems on some systems. Please refer to guidance from your operating system vendor or command line software vendor for solutions to this.
+  
 * location=
+  
   The file system location you wish to download your files to.
+  
 
 ### Required for version test
 
