@@ -6,6 +6,12 @@ The OS Data Hub is a service providing access to Ordnance Survey data as part of
 *Please note that the OS Maps API provided by the OS Data Hub is separate from the [OS Maps API for Enterprise](https://developer.ordnancesurvey.co.uk/os-maps-api-enterprise).
 For help with OS Maps API for Enterprise see the separate [API docs](https://apidocs.os.uk/docs/os-maps-overview) and [demos](https://github.com/OrdnanceSurvey/OS-Maps-API).*
 
+## Software requirements
+
+All of the examples work with current web browsers. Internet Explorer is not supported.
+
+The airports example also requires [Node.JS](https://nodejs.org).
+
 ## Using the demos
 
 Each of the demos needs an API key to access the OS Data Hub APIs.
