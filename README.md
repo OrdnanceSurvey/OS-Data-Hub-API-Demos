@@ -52,17 +52,17 @@ users to make API requests with your API key, even though they do not have direc
 
 #### Airports-OAuth
 The Airports OAuth example uses a small server to serve the web application and to provide access to an access token for the OS Data Hub APIs.
-This proxy allows you to embed an API key and secret into the server without exposing the API key to the end users of the application.
+This proxy allows you to embed an API key and secret into the server without exposing them the end users of the application.
 To run the sample, install [Node.JS](https://nodejs.org) and then run the following commands from the `Airports-OAuth` directory:
 
 <pre>
 npm install
-npm start &lt;API key&gt;
+npm start &lt;API key&gt; &lt;API secret&gt;
 </pre>
 
 Note: A production application would need to add extra protection to the server, to ensure that the only people able
 to get the access token are legitimate users of your application. Failure to do so would allow malicious users to make
-API requests with the token, even though they do not have direct access to the API key.
+API requests with the token, even though they do not have direct access to the API key and secret.
 
 
 ## License

@@ -1,6 +1,6 @@
 
 // The URL for the OS Data Hub APIs
-const dataHubApi = 'https://osdatahub.os.uk/';
+const dataHubApi = 'https://osdatahubapi.os.uk/';
 
 //
 // Setup the EPSG:27700 (British National Grid) projection
