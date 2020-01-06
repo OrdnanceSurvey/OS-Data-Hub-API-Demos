@@ -52,7 +52,7 @@ users to make API requests with your API key, even though they do not have direc
 
 #### Airports-OAuth
 The Airports OAuth example uses a small server to serve the web application and to provide access to an access token for the OS Data Hub APIs.
-This proxy allows you to embed an API key and secret into the server without exposing them the end users of the application.
+This approach allows you to embed an API key and secret into the server without exposing them the end users of the application.
 To run the sample, install [Node.JS](https://nodejs.org) and then run the following commands from the `Airports-OAuth` directory:
 
 <pre>
