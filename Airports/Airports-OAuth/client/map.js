@@ -30,17 +30,19 @@ function getToken() {
     return fetch('/token')
         .then(response => response.json())
         .then(result => {
-            // Store this token
-            currentToken = result.access_token;
+            if(result.access_token) {
+                // Store this token
+                currentToken = result.access_token;
 
-            // Get a new token 30 seconds before this one expires
-            const timeoutMS = (result.expires_in - 30) * 1000;
-            setTimeout(getToken, timeoutMS);
-        })
-        .catch(error => {
-            message.classList.add('warning');
-            message.textContent = 'Got an error loading access token!' + messageText;
-            return Promise.reject();
+                // Get a new token 30 seconds before this one expires
+                const timeoutMS = (result.expires_in - 30) * 1000;
+                setTimeout(getToken, timeoutMS);
+            } else {
+                // We failed to get the token
+                message.classList.add('warning');
+                message.textContent = 'Got an error loading access token!' + messageText;
+                return Promise.reject();
+            }
         });
 }
 
