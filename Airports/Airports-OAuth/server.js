@@ -9,7 +9,6 @@ if(!key || !secret) {
     throw Error('Please provide an API key on the command line.\nUsage: server.js <API key> <API Secret>');
 }
 console.log('Using API key: ' + key);
-const encodedCredentials = Buffer.from(key + ':' + secret).toString('base64');
 
 // Setup an express server.
 // This server serves the client files to the browser, and provides an endpoint to get an access token.
@@ -20,8 +19,9 @@ app.get('/token', function(req, res) {
     request({
         method: 'POST',
         url: 'https://osdatahubapi.os.uk/oauth2/token/v1',
-        headers: {
-            Authorization: 'Basic ' + encodedCredentials
+        auth: {
+            username: key,
+            password: secret
         },
         form: {
             grant_type: 'client_credentials'
