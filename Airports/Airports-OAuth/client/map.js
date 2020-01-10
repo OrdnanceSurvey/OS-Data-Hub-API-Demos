@@ -77,6 +77,8 @@ getToken().then(() => {
                     })
                         .then(response => response.blob())
                         .then(blob => {
+                            // We have loaded the image data from the WMTS service. We convert it into a base64 image
+                            // that we can set onto the OpenLayers tile.
                             const reader = new FileReader();
                             reader.onloadend = () => {
                                 var data = 'data:image/png;base64,' + btoa(reader.result);
@@ -106,6 +108,8 @@ getToken().then(() => {
                     })
                         .then(response => response.text())
                         .then(geojson => {
+                            // We have loaded GeoJSON features from the WFS service. We convert them into OpenLayers
+                            // features and set them onto the layer source.
                             const features = vectorSource.getFormat().readFeatures(geojson);
                             vectorSource.addFeatures(features);
                         })

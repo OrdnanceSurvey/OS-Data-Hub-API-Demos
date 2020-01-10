@@ -6,7 +6,7 @@ const request = require('request');
 const key = process.argv[2];
 const secret = process.argv[3];
 if(!key || !secret) {
-    throw Error('Please provide an API key on the command line.\nUsage: server.js <API key> <API Secret>');
+    throw Error('Please provide an API key and secret on the command line.\nUsage: server.js <API key> <API Secret>');
 }
 console.log('Using API key: ' + key);
 
