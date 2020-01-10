@@ -39,10 +39,13 @@ function getToken() {
                 setTimeout(getToken, timeoutMS);
             } else {
                 // We failed to get the token
-                message.classList.add('warning');
-                message.textContent = 'Got an error loading access token!' + messageText;
                 return Promise.reject();
             }
+        })
+        .catch(error => {
+            message.classList.add('warning');
+            message.textContent = 'Got an error loading access token!' + messageText;
+            return Promise.reject();
         });
 }
 
