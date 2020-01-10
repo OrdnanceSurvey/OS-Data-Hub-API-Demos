@@ -10,7 +10,7 @@ For help with OS Maps API for Enterprise see the separate [API docs](https://api
 
 All of the examples work with current web browsers. Internet Explorer is not supported.
 
-The airports example also requires [Node.JS](https://nodejs.org).
+The airports examples also require [Node.JS](https://nodejs.org).
 
 ## Using the demos
 
@@ -18,7 +18,7 @@ Each of the demos needs an API key to access the OS Data Hub APIs.
 
 Register for API keys using the [OS Data Hub](https://osdatahub.os.uk/):
 - Sign up to the OS Data Hub, and create a project
-- Add both the OS Maps API and OS Features API to your project
+- Add the OS Maps API, OS Features API, and OS Vector Tile API to your project
 - Copy the API key from the project page
 
 ### OS Features API, OS Maps API and OS Vector Tile API examples
