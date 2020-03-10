@@ -47,7 +47,7 @@ function setupLayer() {
 
                 var serviceJson = result;
 
-                // Read the tile grid dimensions from the service meta-data
+                // Read the tile grid dimensions from the service.json
                 var extent = [serviceJson.fullExtent.xmin, serviceJson.fullExtent.ymin, serviceJson.fullExtent.xmax, serviceJson.fullExtent.ymax];
                 var origin = [serviceJson.tileInfo.origin.x, serviceJson.tileInfo.origin.y];
                 var resolutions = serviceJson.tileInfo.lods.map(l => l.resolution).slice(0, 16);
