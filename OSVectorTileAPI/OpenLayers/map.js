@@ -37,15 +37,16 @@ function setupLayer() {
             var styleJson = result;
 
             // Read URLS for sprites.json and sprites.png from styles.json
-            var spritesJsonUrl = styleJson.sprite.replace("?key=", ".json?key=");
+            var spritesJsonUrl = fetch(styleJson.sprite.replace("?key=", ".json?key=")).then(response => response.json());
             var spritesPngUrl = styleJson.sprite.replace("?key=", ".png?key=");
 
             // Fetch the service JSON
             var serviceUrl = fetch(styleJson.sources.esri.url).then(response => response.json());
 
-            Promise.resolve(serviceUrl).then(result => {
+            Promise.all([serviceUrl, spritesJsonUrl]).then(results => {
 
-                var serviceJson = result;
+                var serviceJson = results[0];
+                var spritesJson = results[1];
 
                 // Read the tile grid dimensions from the service.json
                 var extent = [serviceJson.fullExtent.xmin, serviceJson.fullExtent.ymin, serviceJson.fullExtent.xmax, serviceJson.fullExtent.ymax];
@@ -80,7 +81,7 @@ function setupLayer() {
                 
                 // Setup the styling for the vector tile layer.
                 // We use the default style fetched in the promise here, though "style" can be any JSON VTS style
-                olms.stylefunction(layer, styleJson, 'esri', resolutions, spritesJsonUrl, spritesPngUrl);
+                olms.stylefunction(layer, styleJson, 'esri', resolutions, spritesJson, spritesPngUrl);
 
                 source.on('tileloaderror', function(event) {
                     message.classList.add("warning");
