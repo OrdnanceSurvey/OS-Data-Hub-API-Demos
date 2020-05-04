@@ -9,24 +9,24 @@ if(!key) {
 }
 console.log('Using API key: ' + key);
 
-// Setup some regular expressions that we need in the rest of the code.
-const keyExpression = new RegExp('key=' + key, 'g');
+// Setup the regular expression that we use to replace the server URL in the HTTP responses.
 const osDataHubAPIExpression = /https:\/\/osdatahubapi\.os\.uk/g;
 
 // Setup an express router. This router acts as a proxy for OS Data Hub API calls. It's main role is to add the
-// API key on to each request.
+// API key header on to each request.
 const proxyRouter = express.Router();
 proxyRouter.get('/\*', (req, res) => {
-    // Add the API key into the request URL, and prefix the whole thing with the OS Data Hub API endpoint.
-    let separator = '?';
-    if(req.url.indexOf('?') !== -1) {
-        separator = '&';
-    }
-    const url = 'https://osdatahubapi.os.uk' + req.url + separator + 'key=' + key;
+    // Prefix the request URL with the OS Data Hub API endpoint.
+    const url = 'https://osdatahubapi.os.uk' + req.url;
 
-    // We need to intercept and re-write all the requests, as we don't want the WMTS capabilities document
-    // or WFS replies to reveal the API key to the client, and we need to re-route requests back through this proxy.
-    request({ url, encoding: null }, (error, response, buffer) => {
+    // We need to intercept and re-write all the requests, as we need to re-route requests back through this proxy.
+    request({
+        url,
+        encoding: null,
+        headers: {
+            key
+        }
+    }, (error, response, buffer) => {
         if(!response) {
             res.status(502).send('Failed to proxy URL: ' + req.url);
             return;
@@ -40,7 +40,6 @@ proxyRouter.get('/\*', (req, res) => {
         res.status(statusCode);
         if(contentType !== 'image/png') {
             let body = buffer.toString();
-            body = body.replace(keyExpression, '');
             body = body.replace(osDataHubAPIExpression, 'http://' + req.headers.host + '/proxy');
             res.send(body);
         } else {
