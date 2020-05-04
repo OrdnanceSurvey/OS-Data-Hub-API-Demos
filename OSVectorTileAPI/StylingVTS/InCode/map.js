@@ -137,7 +137,8 @@ function setupLayer() {
 
             source.on('tileloaderror', function(event) {
                 message.classList.add("warning");
-                message.textContent = 'Could not connect to the API. Ensure you are entering a project API key for a project that contains the OS Vector Tile API';
+                message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OpenData.';
+                instructions.classList.remove("hidden");
             });
 
             // Set the default center of the map view
@@ -156,7 +157,7 @@ function setupLayer() {
                 view: new ol.View({
                     projection: 'EPSG:' + wkid,
                     center: center,
-                    zoom: Math.floor(resolutions.length / 2)
+                    zoom: 7
                 })
             });
             // Expand the attribution control, so that the the copyright message is visible
@@ -168,7 +169,7 @@ function setupLayer() {
         })
         .catch(error => {
             message.classList.add("warning");
-            message.textContent = 'Got an error from the Vector Tile Service! Check your network connection, or try another API key.';
+            message.textContent = 'Could not connect to the API. Ensure you are entering a project API key for a project that contains the OS Vector Tile API';
             instructions.classList.remove("hidden");
         });
 }

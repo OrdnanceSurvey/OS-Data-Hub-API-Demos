@@ -31,7 +31,10 @@ function setupLayer() {
         accessToken: 'no-token',
         style: serviceUrl + '/resources/styles',
         transformRequest: url => {
-            url += '?key=' + key + '&srs=3857';
+            if(url.indexOf('?key=') === -1) {
+                url += '?key=' + key;
+            }
+            url += '&srs=3857';
             return {
                 url: url
             }

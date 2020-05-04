@@ -27,7 +27,7 @@ require(
             message.classList.remove("warning");
             message.textContent = 'To view the map, please enter a valid API key.';
             instructions.classList.add("hidden");
-            
+
             // Defining the WMTS layer using the service URL to pull in the main settings
             var wmtsLayer = new WMTSLayer({
                 url: 'https://osdatahubapi.os.uk/OSMapsAPI/wmts/v1',
@@ -65,7 +65,7 @@ require(
                     map: map,
                     container: "map",
                     center: center,
-                    scale: 50000
+                    scale: 250000
                 });
             });
         };

@@ -53,7 +53,8 @@ function setupLayer() {
             // Error handling should the tiles fail to load. This can be extended to catch specific errors.
             source.on('tileloaderror', function(event) {
                 message.classList.add("warning");
-                message.textContent = 'Could not load a map tile. Ensure you are entering a project API key for a project that contains the OS Maps API';
+                message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OpenData.';
+                instructions.classList.remove("hidden");
             });
             
             // Set up the view options, center of map, zoom level and projection information
