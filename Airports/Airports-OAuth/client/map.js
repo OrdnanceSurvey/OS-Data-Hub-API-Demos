@@ -75,6 +75,12 @@ getToken().then(() => {
                             Authorization: 'Bearer ' + currentToken
                         }
                     })
+                        .then(response => {
+                            if(response.ok) {
+                                return response
+                            }
+                            return Reject(response);
+                        })
                         .then(response => response.blob())
                         .then(blob => {
                             // We have loaded the image data from the WMTS service. We convert it into a base64 image
@@ -88,7 +94,7 @@ getToken().then(() => {
                         })
                         .catch(error => {
                             message.classList.add('warning');
-                            message.textContent = 'Got an error loading tiles!' + messageText;
+                            message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OpenData.' + messageText;
                         });
                 },
                 ...options
