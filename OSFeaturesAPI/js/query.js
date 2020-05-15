@@ -43,12 +43,7 @@ function runQuery() {
         version: '2.0.0',
         // typeName defines tha layer we are querying
         // You can replace this with another layer if you wish
-        typeName: 'Sites_FunctionalSite',
-        // The filter is applied to the data on the server before returning it back to you
-        // In this case we are filtering "SiteFunction" for "Airport"
-        // Information about the accepted filter types can be found in the WFS
-        // Information about the values to filter on can be found in the individual product specifications
-        filter: '<Filter><PropertyIsEqualTo><PropertyName>SiteFunction</PropertyName><Literal>Airport</Literal></PropertyIsEqualTo></Filter>',
+        typeName: 'Zoomstack_Airports',
         startIndex: startIndex,
         count: count,
         outputFormat: 'GEOJSON'
@@ -76,7 +71,7 @@ function runQuery() {
             json.features.forEach(feature => {
                 // Create a heading using the feature name
                 var node = document.createElement('h1');
-                node.innerText = feature.properties.DistinctiveName1;
+                node.innerText = feature.properties.Name;
                 results.appendChild(node);
 
                 // Print out the feature geometry
