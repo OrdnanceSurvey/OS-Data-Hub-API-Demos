@@ -1,0 +1,27 @@
+{
+  "name": "omse-airport-demo",
+  "version": "1.0.0",
+  "description": "An application demonstrating combined use of the OS Maps API and OS Features API",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --inspect server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrdnanceSurvey/OS-Data-Hub-API-Demos.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/OrdnanceSurvey/OS-Data-Hub-API-Demos/issues"
+  },
+  "homepage": "https://github.com/OrdnanceSurvey/OS-Data-Hub-API-Demos#readme"
+}

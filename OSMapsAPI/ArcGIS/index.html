@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>OS Maps API Demo</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" />
+        <link href="../style.css" rel="stylesheet">
+        <script src="https://js.arcgis.com/4.10/"></script>
+    </head>
+    <body>
+        <div id="header">
+            <h1>OS Maps API demonstrator</h1>
+            <p>This sample shows how to display a map using the OS Maps API and the ArcGIS API for JavaScript</p>
+            <p id="message">To view the map, please enter a valid API key.</p>
+            <form autocomplete="on" onsubmit="setupLayer(); return false;">
+                <label for="keyInput" class="stretch">
+                    Project API Key
+                    <input id="keyInput" type="text" placeholder="Enter your API Project Key from the OS DataHub" />
+                </label>
+                <label for="style">
+                    Mapping Style
+                    <select id="style" onchange="setupLayer()">
+                        <option value="Leisure_27700">Leisure 27700</option>
+                        <option value="Light_27700">Light 27700</option>
+                        <option value="Light_3857">Light 3857</option>
+                        <option value="Outdoor_27700">Outdoor 27700</option>
+                        <option value="Outdoor_3857">Outdoor 3857</option>
+                        <option value="Road_27700">Road 27700</option>
+                        <option value="Road_3857">Road 3857</option>
+                    </select>
+                </label>
+                <button type="submit">Load map</button>
+            </form>
+        </div>
+        <div id="map"></div>
+        <div id="instructions">
+            <p>To connect to your mapping API: </p>
+            <ol>
+                <li>Go to the <a href="https://osdatahub.os.uk" target="_blank" rel="noopener noreferrer">OS DataHub</a>, </li>
+                <li>Create a project, </li>
+                <li>Add the <b>OS Maps API (WMTS)</b> API to your project</li>
+                <li>Copy the project API Key, and enter it into the box above.</li>
+            </ol>
+        </div>
+        <script type="text/javascript" src="map.js"></script>
+    </body>
+</html>
