@@ -18,13 +18,13 @@
                     <input id="keyInput" type="text" placeholder="Enter your API Project Key from the OS DataHub" />
                 </div>
                 <br><br>
-                <label for="byIdentifier">Look up ID and return associated Linked Identifiers</label><br/>
+                <label for="byIdentifier">1. Look up ID and return associated Linked Identifiers</label><br/>
                 <div class="inputContainer">
                         <input id="byIdentifier" type="text" placeholder="Enter ID" />
                         <button onclick="runByIdentifierQuery()">Run query</button>
                     </div>
                 <br><br>
-                <label for="feature">Look up ID by feature type and return associated Linked Identifiers</label><br/>
+                <label for="feature">2. Look up ID by feature type and return associated Linked Identifiers</label><br/>
                 <div class="inputContainer">
                     <select id="feature" name="feature">
                         <option value="null">Select feature type</option>
@@ -40,7 +40,7 @@
                     <button onclick="runByFeatureTypeQuery()">Run query</button>
                 </div>
                 <br><br>
-                <label for="keyInput">Look up ID by identifier type and return associated Linked Identifiers</label><br/>
+                <label for="keyInput">3. Look up ID by identifier type and return associated Linked Identifiers</label><br/>
                 <div class="inputContainer">
                     <select id="identifier" name="identifier">
                         <option value="null">Select identifier type</option>
@@ -53,7 +53,7 @@
                     <button onclick="runByIdentifierTypeQuery()">Run query</button>
                 </div>
                 <br><br>
-                <label for="correlationMethod">Get current product version information</label><br/>
+                <label for="correlationMethod">4. Get current product version information</label><br/>
                 <div class="inputContainer">
                     <select id="correlationMethod" name="correlationMethod">
                         <option value="null">Select correlation method</option>
