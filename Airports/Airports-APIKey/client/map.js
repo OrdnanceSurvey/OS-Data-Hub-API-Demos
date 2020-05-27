@@ -18,7 +18,7 @@ const messageText = ' Check your network connection, or try restarting the serve
 // Get the WMTS capabilities doc from the server, so that we can set up the mapping layer
 //
 var select;
-var url = '/proxy/OSMapsAPI/wmts/v1?request=GetCapabilities&service=WMTS';
+var url = '/proxy/maps/raster/v1/wmts?request=GetCapabilities&service=WMTS';
 fetch(url)
     .then(response => response.text())
     .then(text => {
@@ -104,7 +104,7 @@ function getURLForExtent(extent) {
         .map(param => param + '=' + encodeURI(wfsParameters[param]))
         .join('&');
 
-    return '/proxy/OSFeaturesAPI/wfs/v1?' + urlParameters;
+    return '/proxy/features/v1/wfs?' + urlParameters;
 }
 
 //

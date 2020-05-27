@@ -50,7 +50,7 @@ function setupLayer() {
     }
     
     // Set up the main url parameters
-    var url = 'https://osdatahubapi.os.uk/OSMapsAPI/wmts/v1';
+    var url = 'https://api.os.uk/maps/v1/wmts';
     var parameters = {
         key: key,
         tileMatrixSet: encodeURI(tileMatrix),

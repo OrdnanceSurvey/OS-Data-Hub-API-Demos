@@ -23,7 +23,7 @@ function setupLayer() {
 
     // This sets up the actual VTS layer
     // Center coordinates are defined in EPSG:3857 lon/lat and we are asking for srs=3857 in the "transformRequest"
-    var serviceUrl = "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1";
+    var serviceUrl = "https://api.os.uk/maps/vector/v1/vts";
     map = new mapboxgl.Map({
         container: 'map',
         style: serviceUrl + '/resources/styles',

@@ -1,6 +1,6 @@
 
 // The URL for the OS Data Hub APIs
-const dataHubApi = 'https://osdatahubapi.os.uk/';
+const dataHubApi = 'https://api.os.uk/';
 
 //
 // Setup the EPSG:27700 (British National Grid) projection
@@ -53,7 +53,7 @@ getToken().then(() => {
     //
     // Get the WMTS capabilities doc from the server, so that we can set up the mapping layer
     //
-    var url = dataHubApi + 'OSMapsAPI/wmts/v1?request=GetCapabilities&service=WMTS';
+    var url = dataHubApi + 'maps/raster/v1/wmts?request=GetCapabilities&service=WMTS';
     fetch(url, {
         headers: {
             Authorization: 'Bearer ' + currentToken
@@ -181,7 +181,7 @@ function getURLForExtent(extent) {
         .map(param => param + '=' + encodeURI(wfsParameters[param]))
         .join('&');
 
-    return dataHubApi + 'OSFeaturesAPI/wfs/v1?' + urlParameters;
+    return dataHubApi + 'features/v1/wfs?' + urlParameters;
 }
 
 //
