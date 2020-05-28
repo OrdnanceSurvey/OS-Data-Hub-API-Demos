@@ -11,7 +11,7 @@ window.runByIdentifierQuery = function () {
     }
 
     var url = BASE_URL + 'byIdentifier/' + byIdentifier;
-    runQuery(url)
+    runQuery(url);
 };
 
 window.runByFeatureTypeQuery = function () {
@@ -29,7 +29,7 @@ window.runByFeatureTypeQuery = function () {
     }
 
     var url = BASE_URL + 'linkedIdentifiers/featureType/' + encodeURI(featureType) + '/' + encodeURI(featureTypeID);
-    runQuery(url)
+    runQuery(url);
 };
 
 window.runByIdentifierTypeQuery = function () {
@@ -47,7 +47,7 @@ window.runByIdentifierTypeQuery = function () {
     }
 
     var url = BASE_URL + 'linkedIdentifiers/identifierType/' + encodeURI(identifierType) + '/' + encodeURI(identifierTypeID);
-    runQuery(url)
+    runQuery(url);
 };
 
 window.productVersionInformationQuery = function () {
@@ -59,7 +59,7 @@ window.productVersionInformationQuery = function () {
     }
 
     var url = BASE_URL + 'productVersionInformation/' + encodeURI(correlationMethodID);
-    runQuery(url)
+    runQuery(url);
 };
 
 function displayErrorMessage(messageText) {
