@@ -96,9 +96,23 @@ function runQuery(baseUrl) {
 
     results.innerHTML = '<h1>Loading...</h1>';
     fetch(url)
-        .then(response => response.json())
-        .then(json => {
+        .then(response => {
             results.innerHTML = '';
+
+            var divNode = document.createElement('div');
+            divNode.classList.add('urlContainer');
+            var url = response.url;
+            divNode.innerHTML = '<span class="key">URL: </span> <span class="value">'+ url + '</span>';
+            results.appendChild(divNode);
+
+            var statusCode = response.status;
+            var statusNode = document.createElement('div');
+            statusNode.innerHTML = '<span class="key">Status: </span> <span class="value">'+ statusCode + '</span>';
+            results.appendChild(statusNode);
+
+            return response.json();
+        })
+        .then(json => {
             var node = document.createElement('pre');
             node.innerHTML = syntaxHighlight(JSON.stringify(json, undefined, 2));
             results.appendChild(node);

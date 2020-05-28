@@ -88,11 +88,11 @@ select {
     width: 180px;
 }
 
-pre .key {
+.key {
     color: #07a;
 }
 
-pre .value {
+.value {
     color: #d40058;
 }
 
@@ -143,4 +143,8 @@ pre .value {
 .form {
     margin-top: 20px;
     text-align: left;
+}
+
+.urlContainer {
+    margin-bottom: 8px;
 }
