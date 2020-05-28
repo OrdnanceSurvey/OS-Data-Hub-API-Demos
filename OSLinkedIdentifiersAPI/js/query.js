@@ -1,5 +1,5 @@
 //TODO: Update this before we go live
-const BASE_URL = 'https://ordnance-omse-dev-test.apigee.net/OSLIDSAPI/v1/';
+const BASE_URL = 'https://osdatahubapi.os.uk/OSLIDSAPI/v1/';
 const MISSING_ID_MSG = 'To run this query, please enter an ID.';
 
 window.runByIdentifierQuery = function () {
