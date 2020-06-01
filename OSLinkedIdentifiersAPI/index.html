@@ -71,6 +71,52 @@
                     </select>
                     <button onclick="productVersionInformationQuery()">Run query</button>
                 </div>
+
+                <div class="examplesContainer">
+                    <h3>Examples</h3>
+                    <div class="exampleTitle">
+                        <span>Look up all the features that are linked to Ordnance Surveys HQ building</span>
+                    </div>
+                    <div >
+                        <div class="exampleSelection">
+                            <button id="dropdownButton" class="dropdownButton" onclick="displayDropdownMenu('dropdownMenu')">
+                                <span class="dropdownButtonText">Examples</span>
+                                <img class="dropdownImg" src="./img/expand.png" alt="dropdown arrow"/>
+                            </button>
+                            <input id="osExample" disabled type="text" placeholder="Example url" />
+                        </div>
+                        <div>
+                            <ul class="dropdownMenu hidden" id="dropdownMenu">
+                                <li>
+                                    <div class="menuOption" onclick="runExample('200010019924', 'BLPU')">BLPU-UPRN</div>
+                                    <div class="menuOption" onclick="runExample('osgb1000002682081995', 'TopographicArea')">TopographicArea-TOID</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="exampleTitle">
+                        <span>Look up all the features that are linked to Adanac Drive street</span>
+                    </div>
+                    <div>
+                        <div class="exampleSelection">
+                            <button id="dropdownButtonAdanac" class="dropdownButton" onclick="displayDropdownMenu('dropdownMenuAdanac')">
+                                <span class="dropdownButtonText">Examples</span>
+                                <img class="dropdownImg" src="./img/expand.png" alt="dropdown arrow"/>
+                            </button>
+                            <input id="exampleAdanaDrive" disabled type="text" placeholder="Example url" />
+                        </div>
+                        <div>
+                            <ul class="dropdownMenu hidden" id="dropdownMenuAdanac">
+                                <li>
+                                    <div class="menuOption" onclick="runAdanacExample('40020087', 'Street')">Street-USRN</div>
+                                    <div class="menuOption" onclick="runAdanacExample('osgb4000000023852685', 'Road')">Road-TOID</div>
+                                    <div class="menuOption" onclick="runAdanacExample('osgb4000000023843678', 'RoadLink')">RoadLink-TOID</div>
+                                    <div class="menuOption" onclick="runAdanacExample('osgb5000005189633005', 'TopographicArea')">TopographicArea-TOID</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

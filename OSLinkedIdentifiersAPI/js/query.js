@@ -1,6 +1,14 @@
-//TODO: Update this before we go live
 const BASE_URL = 'https://osdatahubapi.os.uk/OSLIDSAPI/v1/';
 const MISSING_ID_MSG = 'To run this query, please enter an ID.';
+
+window.displayDropdownMenu = function(id) {
+    var dropdownMenu = document.getElementById(id);
+    if (dropdownMenu.classList.contains('hidden')) {
+        dropdownMenu.classList.remove('hidden');
+    } else {
+        dropdownMenu.classList.add('hidden');
+    }
+};
 
 window.runByIdentifierQuery = function () {
     var byIdentifier = document.getElementById('byIdentifier').value;
@@ -59,6 +67,22 @@ window.productVersionInformationQuery = function () {
     }
 
     var url = BASE_URL + 'productVersionInformation/' + encodeURI(correlationMethodID);
+    runQuery(url);
+};
+
+window.runExample = function (id, featureType) {
+    document.getElementById('dropdownMenu').classList.add('hidden');
+
+    var url = BASE_URL + 'linkedIdentifiers/featureType/' + featureType + '/' + id;
+    document.getElementById('osExample').value = url;
+    runQuery(url);
+};
+
+window.runAdanacExample = function (id, featureType) {
+    document.getElementById('dropdownMenuAdanac').classList.add('hidden');
+
+    var url = BASE_URL + 'linkedIdentifiers/featureType/' + featureType + '/' + id;
+    document.getElementById('exampleAdanaDrive').value = url;
     runQuery(url);
 };
 

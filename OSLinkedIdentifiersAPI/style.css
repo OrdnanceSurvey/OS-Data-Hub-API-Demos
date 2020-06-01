@@ -64,23 +64,24 @@ input[type="text"] {
     background-color: #f5f5f5;
     color: #333333;
     font-size: 16px;
-    margin:0;
+    margin: 0 4px 0 0;
 }
 
 button {
     height: 50px;
-    border-radius: 0;
+    border-radius: 3px;
     background-color: #453c90;
     color: #fff;
     font-family: "Source Sans Pro", sans-serif;
     padding: 4px 20px;
     border:0;
+
 }
 
 select {
     height: 50px;
     border-radius: 3px;
-    border: solid 1px #453c90;
+    border: solid 1px #dddddd;
     font-family: "Source Sans Pro", sans-serif;
     font-size:16px;
     color: #666666;
@@ -147,4 +148,59 @@ select {
 
 .urlContainer {
     margin-bottom: 8px;
+}
+
+.dropdownButton {
+    outline: none;
+    border-radius: 3px;
+    border: solid 1px #453c90;
+    color: #453c90;
+    background-color: white;
+    font-weight: 600;
+    display: flex;
+    padding-left: 12px;
+    margin-right: 4px;
+}
+
+.dropdownButtonText {
+    margin: auto
+}
+
+.dropdownImg {
+    margin-left: 12px;
+}
+
+.dropdownMenu {
+    width: 200px;
+    list-style: none;
+    border: 1px solid #666;
+    padding: 0;
+    border-radius: 3px;
+    background: white;
+    margin-top: 4px;
+}
+
+.menuOption {
+    cursor: pointer;
+    padding: 12px;
+}
+
+.menuOption:hover {
+    background-color: #ddd;
+}
+
+.examplesContainer {
+    padding-top: 4px;
+    border-top: 2px solid #dddddd;
+    margin-top: 24px;
+    margin-bottom: 36px;
+}
+
+.exampleTitle {
+    margin-top: 24px;
+    margin-bottom: 8px
+}
+
+.exampleSelection {
+    display: flex
 }
