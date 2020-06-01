@@ -10,7 +10,7 @@ We will explain both for OpenLayers, the principles are similar for MapBoxGL JS 
 
 It is also possible to create your own style from scratch and to host this locally on your server. This example has been omitted for the time being and will be added at a later date.
 
-Before we start please ensure you have a working version of the DataHub VTS Demo for OpenLayers. You can find out how to get this in the Getting Started Guide.
+Before we start please ensure you have a working version of the OS DataHub VTS Demo for OpenLayers. You can find out how to get this in the Getting Started Guide.
 
 We recommend you take a look at the currently pre-defined styling for the service. You can get a copy of the pre-defined style directly from our VTS service by calling https://api.os.uk/maps/vector/v1/vts/resources/styles/?key={YourKey} in your browser.
 

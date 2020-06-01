@@ -36,7 +36,7 @@ fetch(url)
 
         tileSource.on('tileloaderror', function(event) {
             message.classList.add('warning');
-            message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OpenData.' + messageText;
+            message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OS OpenData.' + messageText;
         });
 
         var vectorSource = new ol.source.Vector({

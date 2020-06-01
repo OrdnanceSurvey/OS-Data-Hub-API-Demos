@@ -83,7 +83,7 @@ function setupLayer() {
 
             source.on('tileloaderror', function(event) {
                 message.classList.add("warning");
-                message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OpenData.';
+                message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OS OpenData.';
                 instructions.classList.remove("hidden");
             });
 
