@@ -167,6 +167,10 @@ select {
 }
 
 .dropdownImg {
+    width: 24px;
+    height: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
     margin-left: 12px;
 }
 
