@@ -1,4 +1,5 @@
-const BASE_URL = 'https://osdatahubapi.os.uk/OSLIDSAPI/v1/';
+const BASE_URL = 'https://api.os.uk/search/links/v1/';
+
 const MISSING_ID_MSG = 'To run this query, please enter an ID.';
 
 window.displayDropdownMenu = function(id) {
@@ -18,7 +19,7 @@ window.runByIdentifierQuery = function () {
         return;
     }
 
-    var url = BASE_URL + 'byIdentifier/' + byIdentifier;
+    var url = BASE_URL + 'identifiers/' + byIdentifier;
     runQuery(url);
 };
 
@@ -36,7 +37,7 @@ window.runByFeatureTypeQuery = function () {
         return;
     }
 
-    var url = BASE_URL + 'linkedIdentifiers/featureType/' + encodeURI(featureType) + '/' + encodeURI(featureTypeID);
+    var url = BASE_URL + 'featureTypes/' + encodeURI(featureType) + '/' + encodeURI(featureTypeID);
     runQuery(url);
 };
 
@@ -54,7 +55,7 @@ window.runByIdentifierTypeQuery = function () {
         return;
     }
 
-    var url = BASE_URL + 'linkedIdentifiers/identifierType/' + encodeURI(identifierType) + '/' + encodeURI(identifierTypeID);
+    var url = BASE_URL + 'identifierTypes/' + encodeURI(identifierType) + '/' + encodeURI(identifierTypeID);
     runQuery(url);
 };
 
@@ -66,14 +67,14 @@ window.productVersionInformationQuery = function () {
         return;
     }
 
-    var url = BASE_URL + 'productVersionInformation/' + encodeURI(correlationMethodID);
+    var url = BASE_URL + 'productVersionInfo/' + encodeURI(correlationMethodID);
     runQuery(url);
 };
 
 window.runExample = function (id, featureType) {
     document.getElementById('dropdownMenu').classList.add('hidden');
 
-    var url = BASE_URL + 'linkedIdentifiers/featureType/' + featureType + '/' + id;
+    var url = BASE_URL + 'featureTypes/' + featureType + '/' + id;
     document.getElementById('osExample').value = url;
     runQuery(url);
 };
@@ -81,7 +82,7 @@ window.runExample = function (id, featureType) {
 window.runAdanacExample = function (id, featureType) {
     document.getElementById('dropdownMenuAdanac').classList.add('hidden');
 
-    var url = BASE_URL + 'linkedIdentifiers/featureType/' + featureType + '/' + id;
+    var url = BASE_URL + 'featureTypes/' + featureType + '/' + id;
     document.getElementById('exampleAdanaDrive').value = url;
     runQuery(url);
 };
