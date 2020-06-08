@@ -4,17 +4,18 @@
         <title>OS Vector Tile API Demo</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.5.0/proj4-src.js"></script>
-		<script type="text/javascript" src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
-		<script type="text/javascript" src="ol-mapbox-style/olms.js"></script>
-        <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+        <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css" rel='stylesheet' />
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js"></script>
+        <script src="https://unpkg.com/mapbox-gl-leaflet/leaflet-mapbox-gl.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" />
         <link href="../style.css" rel="stylesheet"/>
     </head>
     <body>
         <div id="header">
             <h1>OS Vector Tile API demonstrator</h1>
-            <p>This sample shows how to display a map using the OS Vector Tile API and OpenLayers</p>
+            <p>This sample shows how to display a map using the OS Vector Tile API and Leaflet</p>
             <p id="message">To view the map, please enter a valid API key.</p>
             <form autocomplete="on" onsubmit="setupLayer(); return false;">
                 <label for="keyInput">Project API Key</label><br/>
@@ -30,10 +31,6 @@
                 <li>Add the <b>OS Vector Tile API (VTS)</b> API to your project</li>
                 <li>Copy the project API Key, and enter it into the box above.</li>
             </ol>
-            <span>
-                Note that this sample will allow you to zoom the map down into Premium data layers.
-                If your API key only has access to OpenData layers then those requests will fail.
-            </span>
         </div>
         <script type="text/javascript" src="map.js"></script>
     </body>

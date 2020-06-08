@@ -20,7 +20,9 @@ require(
                 if(!params.requestOptions.query) {
                     params.requestOptions.query = {};
                 }
-                params.requestOptions.query.key = key;
+                if(params.url.indexOf("key=") === -1) {
+                    params.requestOptions.query.key = key;
+                }
             }
         });
 
@@ -35,7 +37,7 @@ require(
                 y: 563779,
                 spatialReference: new SpatialReference({wkid: 27700})
             }),
-            scale: 50000,
+            scale: 250000,
             constraints: {
                 minScale: 390,
                 maxScale: 1600000
@@ -44,7 +46,7 @@ require(
         
         window.setupLayer = function() {
             map.layers.removeAll();
-            
+
             // This sets up the API key input at the start
             key = document.getElementById('keyInput').value;
             var message = document.getElementById('message');

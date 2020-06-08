@@ -36,7 +36,7 @@ fetch(url)
 
         tileSource.on('tileloaderror', function(event) {
             message.classList.add('warning');
-            message.textContent = 'Got an error loading tiles!' + messageText;
+            message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OpenData.' + messageText;
         });
 
         var vectorSource = new ol.source.Vector({
@@ -59,8 +59,8 @@ fetch(url)
             layers: [tileLayer, vectorLayer],
             view: new ol.View({
                 projection: 'EPSG:27700',
-                center: [331810, 430974],
-                zoom: 10,
+                center: [512217, 221078],
+                zoom: 5,
                 minResolution: 0.109375
             })
         });
@@ -79,31 +79,25 @@ fetch(url)
 
 //
 // This function returns a URL that does a WFS feature query for the given extent. We filter the results to
-// look up Airports from the FunctionalSite collection.
+// look up Airports from the Zoomstack collection.
 //
 function getURLForExtent(extent) {
     const wfsParameters = {
         service: 'WFS',
         version: '2.0.0',
         request: 'GetFeature',
-        typeNames: 'Sites_FunctionalSite',
+        typeNames: 'Zoomstack_Airports',
         outputFormat: 'GEOJSON',
         srsName: 'urn:ogc:def:crs:EPSG::27700',
         filter:
 `<Filter xmlns="http://www.opengis.net/fes/2.0" xmlns:gml="http://www.opengis.net/gml/3.2">
-  <And>
     <BBOX>
-      <ValueReference>Shape</ValueReference>
-      <gml:Envelope>
-        <gml:lowerCorner>${extent[1]} ${extent[0]}</gml:lowerCorner>
-        <gml:upperCorner>${extent[3]} ${extent[2]}</gml:upperCorner>
-      </gml:Envelope>
+        <ValueReference>Shape</ValueReference>
+        <gml:Envelope>
+            <gml:lowerCorner>${extent[1]} ${extent[0]}</gml:lowerCorner>
+            <gml:upperCorner>${extent[3]} ${extent[2]}</gml:upperCorner>
+        </gml:Envelope>
     </BBOX>
-    <PropertyIsEqualTo>
-      <PropertyName>SiteFunction</PropertyName>
-      <Literal>Airport</Literal>
-    </PropertyIsEqualTo>
-  </And>
 </Filter>`
     };
     const urlParameters = Object.keys(wfsParameters)

@@ -117,7 +117,7 @@ function setupLayer() {
         })
         .catch(error => {
             message.classList.add("warning");
-            message.textContent = 'Got an error from the Vector Tile Service! Check your network connection, or try another API key.';
+            message.textContent = 'Could not connect to the API. Ensure you are entering a project API key for a project that contains the OS Vector Tile API';
             instructions.classList.remove("hidden");
         });
 }
