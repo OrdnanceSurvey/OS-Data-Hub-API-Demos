@@ -10,7 +10,7 @@ require(
     ],
     function(Map, MapView, VectorTileLayer, Point, SpatialReference, esriConfig) {
         
-        var vectorLayerUrl = "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1";
+        var vectorLayerUrl = "https://api.os.uk/maps/vector/v1/vts";
         var key;
 
         // ArcGIS JS reads all required information directly from the main service URL

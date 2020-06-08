@@ -7,7 +7,7 @@ var bng = ol.proj.get('EPSG:27700');
 bng.setExtent([-238375.0,0,700000,1300000]);
 
 var map;
-var url = "https://ordnance-omse-dev-dev.apigee.net/OSVectorTileAPI-1991/vts/v1";
+var url = 'https://api.co.uk/maps/vector/v1/vts';
 
 function setupLayer() {
     if(map) {
