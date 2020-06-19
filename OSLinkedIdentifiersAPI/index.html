@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>OS Linked Identifiers API Demo</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="header">
+            <h1>OS Linked Identifiers API demonstrator</h1>
+            <p>This sample shows how to run four simple queries against the OS Linked Identifiers API.</p>
+            <p id="message">To run any of the queries, please enter a valid API key.</p>
+
+            <div class="form">
+                <label for="keyInput">Project API Key</label><br/>
+                <div class="inputContainer">
+                    <input id="keyInput" type="text" placeholder="Enter your API Project Key from the OS DataHub" />
+                </div>
+                <br><br>
+                <label for="byIdentifier">1. Look up ID and return associated Linked Identifiers</label><br/>
+                <div class="inputContainer">
+                        <input id="byIdentifier" type="text" placeholder="Enter ID" />
+                        <button onclick="runByIdentifierQuery()">Run query</button>
+                    </div>
+                <br><br>
+                <label for="feature">2. Look up ID by feature type and return associated Linked Identifiers</label><br/>
+                <div class="inputContainer">
+                    <select id="feature" name="feature">
+                        <option value="null">Select feature type</option>
+                        <option value="BLPU">BLPU</option>
+                        <option value="Road">Road</option>
+                        <option value="RoadLink">RoadLink</option>
+                        <option value="Street">Street</option>
+                        <option value="TopographicArea">TopographicArea</option>
+                        <option value="ORRoadNode">ORRoadNode</option>
+                        <option value="ORRoadLink">ORRoadLink</option>
+                    </select>
+                    <input id="featureTypeID" type="text" placeholder="Enter ID" />
+                    <button onclick="runByFeatureTypeQuery()">Run query</button>
+                </div>
+                <br><br>
+                <label for="keyInput">3. Look up ID by identifier type and return associated Linked Identifiers</label><br/>
+                <div class="inputContainer">
+                    <select id="identifier" name="identifier">
+                        <option value="null">Select identifier type</option>
+                        <option value="TOID">TOID</option>
+                        <option value="USRN">USRN</option>
+                        <option value="UPRN">UPRN</option>
+                        <option value="GUID">GUID</option>
+                    </select>
+                    <input id="identifierTypeID" type="text" placeholder="Enter ID" />
+                    <button onclick="runByIdentifierTypeQuery()">Run query</button>
+                </div>
+                <br><br>
+                <label for="correlationMethod">4. Get current product version information</label><br/>
+                <div class="inputContainer">
+                    <select id="correlationMethod" name="correlationMethod">
+                        <option value="null">Select correlation method</option>
+                        <option value="RoadLink_TOID_TopographicArea_TOID_2">RoadLink_TOID_TopographicArea_TOID_2</option>
+                        <option value="Road_TOID_TopographicArea_TOID_3">Road_TOID_TopographicArea_TOID_3</option>
+                        <option value="Street_USRN_TopographicArea_TOID_4">Street_USRN_TopographicArea_TOID_4</option>
+                        <option value="BLPU_UPRN_TopographicArea_TOID_5">BLPU_UPRN_TopographicArea_TOID_5</option>
+                        <option value="RoadLink_TOID_Road_TOID_7">RoadLink_TOID_Road_TOID_7</option>
+                        <option value="RoadLink_TOID_Street_USRN_8">RoadLink_TOID_Street_USRN_8</option>
+                        <option value="BLPU_UPRN_RoadLink_TOID_9">BLPU_UPRN_RoadLink_TOID_9</option>
+                        <option value="Road_TOID_Street_USRN_10">Road_TOID_Street_USRN_10</option>
+                        <option value="BLPU_UPRN_Street_USRN_11">BLPU_UPRN_Street_USRN_11</option>
+                        <option value="ORRoadLink_GUID_RoadLink_TOID_12">ORRoadLink_GUID_RoadLink_TOID_12</option>
+                        <option value="ORRoadNode_GUID_RoadLink_TOID_13">ORRoadNode_GUID_RoadLink_TOID_13</option>
+                    </select>
+                    <button onclick="productVersionInformationQuery()">Run query</button>
+                </div>
+
+                <div class="examplesContainer">
+                    <h3>Examples</h3>
+                    <div class="exampleTitle">
+                        <span>Look up all the features that are linked to Ordnance Survey's HQ building</span>
+                    </div>
+                    <div >
+                        <div class="exampleSelection">
+                            <button id="dropdownButton" class="dropdownButton" onclick="displayDropdownMenu('dropdownMenu')">
+                                <span class="dropdownButtonText">Examples</span>
+                                <img class="dropdownImg" src="./img/expand.png" alt="dropdown arrow"/>
+                            </button>
+                            <input id="osExample" disabled type="text" placeholder="Example url" />
+                        </div>
+                        <div>
+                            <ul class="dropdownMenu hidden" id="dropdownMenu">
+                                <li>
+                                    <div class="menuOption" onclick="runExample('200010019924', 'BLPU')">BLPU-UPRN</div>
+                                    <div class="menuOption" onclick="runExample('osgb1000002682081995', 'TopographicArea')">TopographicArea-TOID</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="exampleTitle">
+                        <span>Look up all the features that are linked to Adanac Drive street</span>
+                    </div>
+                    <div>
+                        <div class="exampleSelection">
+                            <button id="dropdownButtonAdanac" class="dropdownButton" onclick="displayDropdownMenu('dropdownMenuAdanac')">
+                                <span class="dropdownButtonText">Examples</span>
+                                <img class="dropdownImg" src="./img/expand.png" alt="dropdown arrow"/>
+                            </button>
+                            <input id="exampleAdanaDrive" disabled type="text" placeholder="Example url" />
+                        </div>
+                        <div>
+                            <ul class="dropdownMenu hidden" id="dropdownMenuAdanac">
+                                <li>
+                                    <div class="menuOption" onclick="runAdanacExample('40020087', 'Street')">Street-USRN</div>
+                                    <div class="menuOption" onclick="runAdanacExample('osgb4000000023852685', 'Road')">Road-TOID</div>
+                                    <div class="menuOption" onclick="runAdanacExample('osgb4000000023843678', 'RoadLink')">RoadLink-TOID</div>
+                                    <div class="menuOption" onclick="runAdanacExample('osgb5000005189633005', 'TopographicArea')">TopographicArea-TOID</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultContainer">
+            <div id="instructions">
+                <p>To connect to your linked identifiers API: </p>
+                <ol>
+                    <li>Go to the <a href="https://osdatahub.os.uk" target="_blank" rel="noopener noreferrer">OS DataHub</a>, </li>
+                    <li>Create a project, </li>
+                    <li>Add the <b>OS Linked Identifiers API (REST)</b> API to your project</li>
+                    <li>Copy the project API Key, and enter it into the box above.</li>
+                </ol>
+            </div>
+
+            <div id="results" class="hidden"></div>
+        </div>
+        <script type="text/javascript" src="js/query.js"></script>
+    </body>
+</html>

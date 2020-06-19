@@ -1,0 +1,210 @@
+/* Set the document to use flexbox layout */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    font-family: sans-serif;
+    overflow-y: hidden;
+}
+
+#results {
+    text-align: left;
+    flex: 1 1 auto;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+/*
+NOTE:
+The CSS following this comment is for *styling purposes only* and is not essential for this demo to run
+- strip out the styles below if you want cleaner code 
+*/
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size:16px;
+    color: #666666;
+    min-width: 480px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.4;
+    letter-spacing: 0.7px;
+    margin: 0 0 10px;
+    color: #453c90;
+}
+
+p {
+    margin: 10px 0;
+}
+
+b {
+    font-weight:600;
+}
+
+label {
+    line-height: 1.7em;
+    font-weight: 600;
+}
+
+input, button {
+    font-size: 16px;
+}
+
+input[type="text"] {
+    height: 24px;
+    border-radius: 3px 0 0 3px;
+    border: solid 1px #dddddd;
+    padding: 12px 16px;
+    flex: 1 1 auto;
+    background-color: #f5f5f5;
+    color: #333333;
+    font-size: 16px;
+    margin: 0 4px 0 0;
+}
+
+button {
+    height: 50px;
+    border-radius: 3px;
+    background-color: #453c90;
+    color: #fff;
+    font-family: "Source Sans Pro", sans-serif;
+    padding: 4px 20px;
+    border:0;
+
+}
+
+select {
+    height: 50px;
+    border-radius: 3px;
+    border: solid 1px #dddddd;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size:16px;
+    color: #666666;
+    margin-right: 5px;
+    width: 180px;
+}
+
+.key {
+    color: #07a;
+}
+
+.value {
+    color: #d40058;
+}
+
+#header {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.4);
+    width: 50%;
+    flex: 1;
+    overflow-y: auto;
+}
+
+#resultContainer {
+    display: flex;
+    width: 50%;
+    padding: 20px;
+    background: #f5f2f0;
+}
+
+#instructions {
+    text-align: left;
+    position: relative;
+    background-color: #fff;
+    padding: 10px 20px;
+    top: 40px;
+    margin: auto;
+    z-index: 100;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.4);
+}
+
+#correlationMethod {
+    flex: 1;
+}
+
+.hidden {
+    display:none;
+}
+
+.warning {
+    color:#d40058;
+    font-weight:400;
+}
+.inputContainer {
+    display: flex;
+}
+
+.form {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.urlContainer {
+    margin-bottom: 8px;
+}
+
+.dropdownButton {
+    outline: none;
+    border-radius: 3px;
+    border: solid 1px #453c90;
+    color: #453c90;
+    background-color: white;
+    font-weight: 600;
+    display: flex;
+    padding-left: 12px;
+    margin-right: 4px;
+}
+
+.dropdownButtonText {
+    margin: auto
+}
+
+.dropdownImg {
+    width: 24px;
+    height: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 12px;
+}
+
+.dropdownMenu {
+    width: 200px;
+    list-style: none;
+    border: 1px solid #666;
+    padding: 0;
+    border-radius: 3px;
+    background: white;
+    margin-top: 4px;
+}
+
+.menuOption {
+    cursor: pointer;
+    padding: 12px;
+}
+
+.menuOption:hover {
+    background-color: #ddd;
+}
+
+.examplesContainer {
+    padding-top: 4px;
+    border-top: 2px solid #dddddd;
+    margin-top: 24px;
+    margin-bottom: 36px;
+}
+
+.exampleTitle {
+    margin-top: 24px;
+    margin-bottom: 8px
+}
+
+.exampleSelection {
+    display: flex
+}
