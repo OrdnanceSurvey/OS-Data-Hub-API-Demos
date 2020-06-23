@@ -1,4 +1,4 @@
-# OS Data Hub API Demos DEV
+# OS Data Hub API Demos
 
 This repo contains working examples of how to use some of the products provided by the [OS Data Hub](https://osdatahub.os.uk/).
 The OS Data Hub is a service providing access to Ordnance Survey data as part of the [Open MasterMap Implementation Programme](https://www.ordnancesurvey.co.uk/business-and-government/products/open-mastermap.html).
