@@ -10,9 +10,9 @@ We will explain both for OpenLayers, the principles are similar for MapBoxGL JS 
 
 It is also possible to create your own style from scratch and to host this locally on your server. This example has been omitted for the time being and will be added at a later date.
 
-Before we start please ensure you have a working version of the DataHub VTS Demo for OpenLayers. You can find out how to get this in the Getting Started Guide.
+Before we start please ensure you have a working version of the OS DataHub VTS Demo for OpenLayers. You can find out how to get this in the Getting Started Guide.
 
-We recommend you take a look at the currently pre-defined styling for the service. You can get a copy of the pre-defined style directly from our VTS service by calling https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1/resources/styles/?key={YourKey} in your browser.
+We recommend you take a look at the currently pre-defined styling for the service. You can get a copy of the pre-defined style directly from our VTS service by calling https://api.os.uk/maps/vector/v1/vts/resources/styles/?key={YourKey} in your browser.
 
 The result is [minified](https://en.wikipedia.org/wiki/Minification_(programming)) to keep the file size as small as possible, rendering it difficult to read for humans. Search online for a "JSON pretty print" converter which will turn the minified JSON data you received back into a more readable format.
    

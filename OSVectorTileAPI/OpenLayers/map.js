@@ -7,7 +7,7 @@ var bng = ol.proj.get('EPSG:27700');
 bng.setExtent([-238375.0,0,700000,1300000]);
 
 var map;
-var url = 'https://api.co.uk/maps/vector/v1/vts';
+var url = 'https://api.os.uk/maps/vector/v1/vts';
 
 function setupLayer() {
     if(map) {

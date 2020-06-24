@@ -10,14 +10,14 @@ if(!key) {
 console.log('Using API key: ' + key);
 
 // Setup the regular expression that we use to replace the server URL in the HTTP responses.
-const osDataHubAPIExpression = /https:\/\/osdatahubapi\.os\.uk/g;
+const osDataHubAPIExpression = /https:\/\/api\.os\.uk/g;
 
 // Setup an express router. This router acts as a proxy for OS Data Hub API calls. It's main role is to add the
 // API key header on to each request.
 const proxyRouter = express.Router();
 proxyRouter.get('/\*', (req, res) => {
     // Prefix the request URL with the OS Data Hub API endpoint.
-    const url = 'https://osdatahubapi.os.uk' + req.url;
+    const url = 'https://api.os.uk' + req.url;
 
     // We need to intercept and re-write all the requests, as we need to re-route requests back through this proxy.
     request({

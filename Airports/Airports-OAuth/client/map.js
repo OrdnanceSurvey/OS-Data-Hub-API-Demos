@@ -1,6 +1,6 @@
 
 // The URL for the OS Data Hub APIs
-const dataHubApi = 'https://osdatahubapi.os.uk/';
+const dataHubApi = 'https://api.os.uk/';
 
 //
 // Setup the EPSG:27700 (British National Grid) projection
@@ -53,7 +53,7 @@ getToken().then(() => {
     //
     // Get the WMTS capabilities doc from the server, so that we can set up the mapping layer
     //
-    var url = dataHubApi + 'OSMapsAPI/wmts/v1?request=GetCapabilities&service=WMTS';
+    var url = dataHubApi + 'maps/raster/v1/wmts?request=GetCapabilities&service=WMTS';
     fetch(url, {
         headers: {
             Authorization: 'Bearer ' + currentToken
@@ -94,7 +94,7 @@ getToken().then(() => {
                         })
                         .catch(error => {
                             message.classList.add('warning');
-                            message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OpenData.' + messageText;
+                            message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OS OpenData.' + messageText;
                         });
                 },
                 ...options
@@ -181,7 +181,7 @@ function getURLForExtent(extent) {
         .map(param => param + '=' + encodeURI(wfsParameters[param]))
         .join('&');
 
-    return dataHubApi + 'OSFeaturesAPI/wfs/v1?' + urlParameters;
+    return dataHubApi + 'features/v1/wfs?' + urlParameters;
 }
 
 //
