@@ -52,7 +52,7 @@ function runQuery() {
     var encodedParameters = Object.keys(parameters)
         .map(paramName => paramName + '=' + encodeURI(parameters[paramName]))
         .join('&');
-    var url = 'https://osdatahubapi.os.uk/OSFeaturesAPI/wfs/v1?' + encodedParameters;
+    var url = 'https://api.os.uk/features/v1/wfs?' + encodedParameters;
 
     search.disabled = true;
     more.disabled = true;
