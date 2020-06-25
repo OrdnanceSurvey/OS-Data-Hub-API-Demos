@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'client')));
 app.get('/token', function(req, res) {
     request({
         method: 'POST',
-        url: 'https://osdatahubapi.os.uk/oauth2/token/v1',
+        url: 'https://api.os.uk/oauth2/token/v1',
         auth: {
             username: key,
             password: secret

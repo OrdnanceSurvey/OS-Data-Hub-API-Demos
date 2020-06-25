@@ -30,7 +30,7 @@ require(
 
             // Defining the WMTS layer using the service URL to pull in the main settings
             var wmtsLayer = new WMTSLayer({
-                url: 'https://osdatahubapi.os.uk/OSMapsAPI/wmts/v1',
+                url: 'https://api.os.uk/maps/raster/v1/wmts',
                 activeLayer: {
                     id: style
                 },

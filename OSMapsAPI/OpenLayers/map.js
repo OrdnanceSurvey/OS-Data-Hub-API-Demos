@@ -27,7 +27,7 @@ function setupLayer() {
     message.textContent = 'To view the map, please enter a valid API key.';
     instructions.classList.add("hidden");
     
-    var url = 'https://osdatahubapi.os.uk/OSMapsAPI/wmts/v1?service=wmts&request=GetCapabilities&key=' + key;
+    var url = 'https://api.os.uk/maps/raster/v1/wmts?service=wmts&request=GetCapabilities&key=' + key;
     fetch(url)
         .then(response => response.text())
         .then(text => {
@@ -53,7 +53,7 @@ function setupLayer() {
             // Error handling should the tiles fail to load. This can be extended to catch specific errors.
             source.on('tileloaderror', function(event) {
                 message.classList.add("warning");
-                message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OpenData.';
+                message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OS OpenData.';
                 instructions.classList.remove("hidden");
             });
             

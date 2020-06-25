@@ -19,12 +19,12 @@ For this example we will only load the styles relating to the national parks and
    We start with:
    ```
     "version": 8,
-    "sprite": "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1/resources/sprites/sprite",
-    "glyphs": "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1/resources/fonts/{fontstack}/{range}.pbf",
+    "sprite": "https://api.os.uk/maps/vector/v1/vts/resources/sprites/sprite",
+    "glyphs": "https://api.os.uk/maps/vector/v1/vts/resources/fonts/{fontstack}/{range}.pbf",
     "sources": {
       "esri": {
         "type": "vector",
-        "url": "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1/"
+        "url": "https://api.os.uk/maps/vector/v1/vts/"
       }
     },
     "layers": []

@@ -7,7 +7,7 @@ var bng = ol.proj.get('EPSG:27700');
 bng.setExtent([-238375.0,0,700000,1300000]);
 
 var map;
-var serviceUrl = "https://osdatahubapi.os.uk/OSVectorTileAPI/vts/v1";
+var serviceUrl = "https://api.os.uk/maps/vector/v1/vts";
 
 function setupLayer() {
     if(map) {
@@ -83,7 +83,7 @@ function setupLayer() {
 
             source.on('tileloaderror', function(event) {
                 message.classList.add("warning");
-                message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OpenData.';
+                message.textContent = 'Could not load a map tile. You may be attempting to access Premium data with an API key that only has access to OS OpenData.';
                 instructions.classList.remove("hidden");
             });
 
