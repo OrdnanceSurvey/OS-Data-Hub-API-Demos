@@ -62,7 +62,7 @@ function setupLayer() {
                 projection: options.projection,
                 center: [-121099, 7161610],
                 resolutions: options.tileGrid.getResolutions(),
-                zoom: 10
+                zoom: 8
             };
             
             // If we are using a layer in British National Grid (EPSG:27700), then tranform the center point from
