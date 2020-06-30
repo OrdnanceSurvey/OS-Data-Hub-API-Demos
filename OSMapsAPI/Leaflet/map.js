@@ -81,6 +81,12 @@ function setupLayer() {
         message.textContent = 'Could not connect to the API. Ensure you are entering a project API key for a project that contains the OS Maps API';
         instructions.classList.remove("hidden");
     });
+    // Remove warning and hide instructions on tile load. This is so tileerror message does not persist when returning to a valid zoom level
+    layer.on('tileloadstart', function(event) {
+        message.classList.remove("warning");
+        message.textContent = 'To view the map, please enter a valid API key.';
+        instructions.classList.add("hidden");
+    });
     mapOptions.layers = layer;
     // Create the map object and connect it to the 'map' element in the html
     map = L.map('map', mapOptions);
