@@ -4,7 +4,7 @@
   "description": "An application demonstrating combined use of the OS Maps API and OS Features API",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "path": "^0.12.7",
     "request": "^2.88.2"
   },
