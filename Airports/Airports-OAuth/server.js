@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const request = require('request');
+const fetch = require('node-fetch');
 
 // Read the application API key and secret from the command line.
 const key = process.argv[2];
@@ -16,29 +16,24 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'client')));
 
 app.get('/token', function(req, res) {
-    request({
+    const params = new URLSearchParams();
+    params.append('grant_type', 'client_credentials');
+    const authString = Buffer.from(key + ":" + secret).toString('base64');
+    fetch('https://api.os.uk/oauth2/token/v1', {
         method: 'POST',
-        url: 'https://api.os.uk/oauth2/token/v1',
-        auth: {
-            username: key,
-            password: secret
-        },
-        form: {
-            grant_type: 'client_credentials'
-        },
-        encoding: null
-    }, (error, response, buffer) => {
-        if(error) {
-            res.status(500).send('Failed to get access token, check the API key and secret');
+        body: params,
+        headers: {
+            Authorization: 'Basic ' + authString
         }
-
-        // Pass the access token back to the caller
-        const contentType = response.headers['content-type'];
-        const statusCode = response.statusCode;
-        res.set('Content-Type', contentType);
-        res.status(statusCode);
-        res.send(buffer);
-    });
+    })
+        .then(res => res.json())
+        .then(json => {
+            res.set('Content-Type', 'application/json');
+            res.send(json);
+        })
+        .catch(() => {
+            res.status(500).send('Failed to get access token, check the API key and secret');
+        });
 });
 
 app.listen(8080, () => console.log("Listening on port 8080. Please open http://localhost:8080 in a web browser."));

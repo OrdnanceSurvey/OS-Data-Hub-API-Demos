@@ -4,12 +4,12 @@
   "description": "An application demonstrating combined use of the OS Maps API and OS Features API",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
-    "path": "^0.12.7",
-    "request": "^2.88.2"
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.7",
+    "path": "^0.12.7"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.20"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
